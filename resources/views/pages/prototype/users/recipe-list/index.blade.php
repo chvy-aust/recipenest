@@ -1,243 +1,278 @@
 <x-mylayouts.layout-prototype>
 
-    {{-- Source: https://bootstrapbrain.com/component/bootstrap-cards-example-for-blog-posts/ --}}
 
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/blogs/blog-3/assets/css/blog-3.css">
 
-    <!-- Blog 3 - Bootstrap Brain Component -->
-    <section class="py-3 py-md-5">
-        <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-                    <h3 class="fs-6 text-secondary mb-2 text-uppercase text-center">Our News</h3>
-                    <h2 class="display-5 mb-4 mb-md-5 text-center">Here is our blog's latest company news about
-                        regularly publishing fresh content.</h2>
-                    <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
-                </div>
+
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title position-relative">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Category</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Categories</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-12">
+
+          <!-- Blog Posts Section -->
+          <section id="blog-posts" class="blog-posts section">
+
+            <div class="container">
+              <div class="row gy-4">
+
+                <div class="col-lg-6">
+                  <article class="position-relative h-100">
+
+                    <div class="post-img position-relative overflow-hidden">
+                      <img style="width: 100%; height: 400px" src="{{ asset('storage/images/media/recipe1.png') }}" class="img-fluid" alt="">
+                      <span class="post-date">December 12</span>
+                    </div>
+
+                    <div class="post-content d-flex flex-column">
+
+                      <h3 class="post-title">Red Lentil Protein Waffles</h3>
+
+                      <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-person"></i> <span class="ps-2">John Doe</span>
+                        </div>
+                        <span class="px-3 text-black-50">/</span>
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-folder2"></i> <span class="ps-2">Vegetarian</span>
+                        </div>
+                      </div>
+
+                      <p>
+                       These waffles are for those who want a sweet start to the morning but also know how important it is to begin the day with a bit of protein.
+                      </p>
+
+                      <hr>
+
+                      <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+                    </div>
+
+                  </article>
+                </div><!-- End post list item -->
+
+                <div class="col-lg-6">
+                  <article class="position-relative h-100">
+
+                    <div class="post-img position-relative overflow-hidden">
+                      <img style="width: 100%; height: 400px" src="{{ asset('storage/images/media/recipe2.jpg') }}" class="img-fluid" alt="">
+                      <span class="post-date">March 19</span>
+                    </div>
+
+                    <div class="post-content d-flex flex-column">
+
+                      <h3 class="post-title">Miso Oatmeal with Charred Kale & Soft Boiled Eggs</h3>
+
+                      <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
+                        </div>
+                        <span class="px-3 text-black-50">/</span>
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-folder2"></i> <span class="ps-2">Economics</span>
+                        </div>
+                      </div>
+
+                      <p>
+                        Lately, I’m a savory oatmeal evangelist. This dish is warm, comforting, nutrient dense, and perfect for literally any meal.
+                      </p>
+
+                      <hr>
+
+                      <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+                    </div>
+
+                  </article>
+                </div><!-- End post list item -->
+
+                <div class="col-lg-6">
+                  <article class="position-relative h-100">
+
+                    <div class="post-img position-relative overflow-hidden">
+                      <img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt="">
+                      <span class="post-date">June 24</span>
+                    </div>
+
+                    <div class="post-content d-flex flex-column">
+
+                      <h3 class="post-title">Possimus soluta ut id suscipit ea ut. In quo quia et soluta libero sit sint.</h3>
+
+                      <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-person"></i> <span class="ps-2">Maria Doe</span>
+                        </div>
+                        <span class="px-3 text-black-50">/</span>
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-folder2"></i> <span class="ps-2">Sports</span>
+                        </div>
+                      </div>
+
+                      <p>
+                        Aut iste neque ut illum qui perspiciatis similique recusandae non. Fugit autem dolorem labore omnis et. Eum temporibus fugiat voluptate enim tenetur sunt omnis.
+                      </p>
+
+                      <hr>
+
+                      <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+                    </div>
+
+                  </article>
+                </div><!-- End post list item -->
+
+                <div class="col-lg-6">
+                  <article class="position-relative h-100">
+
+                    <div class="post-img position-relative overflow-hidden">
+                      <img src="assets/img/blog/blog-4.jpg" class="img-fluid" alt="">
+                      <span class="post-date">August 05</span>
+                    </div>
+
+                    <div class="post-content d-flex flex-column">
+
+                      <h3 class="post-title">Non rem rerum nam cum quo minus. Dolor distinctio deleniti explicabo eius exercitationem.</h3>
+
+                      <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-person"></i> <span class="ps-2">Maria Doe</span>
+                        </div>
+                        <span class="px-3 text-black-50">/</span>
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-folder2"></i> <span class="ps-2">Sports</span>
+                        </div>
+                      </div>
+
+                      <p>
+                        Aspernatur rerum perferendis et sint. Voluptates cupiditate voluptas atque quae. Rem veritatis rerum enim et autem. Saepe atque cum eligendi eaque iste omnis a qui.
+                      </p>
+
+                      <hr>
+
+                      <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+                    </div>
+
+                  </article>
+                </div><!-- End post list item -->
+
+                <div class="col-lg-6">
+                  <article class="position-relative h-100">
+
+                    <div class="post-img position-relative overflow-hidden">
+                      <img src="assets/img/blog/blog-5.jpg" class="img-fluid" alt="">
+                      <span class="post-date">September 17</span>
+                    </div>
+
+                    <div class="post-content d-flex flex-column">
+
+                      <h3 class="post-title">Accusamus quaerat aliquam qui debitis facilis consequatur</h3>
+
+                      <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-person"></i> <span class="ps-2">John Parker</span>
+                        </div>
+                        <span class="px-3 text-black-50">/</span>
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-folder2"></i> <span class="ps-2">Politics</span>
+                        </div>
+                      </div>
+
+                      <p>
+                        In itaque assumenda aliquam voluptatem qui temporibus iusto nisi quia. Autem vitae quas aperiam nesciunt mollitia tempora odio omnis. Ipsa odit sit ut amet necessitatibus. Quo ullam ut corrupti autem consequuntur totam dolorem.
+                      </p>
+
+                      <hr>
+
+                      <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+                    </div>
+
+                  </article>
+                </div><!-- End post list item -->
+
+                <div class="col-lg-6">
+                  <article class="position-relative h-100">
+
+                    <div class="post-img position-relative overflow-hidden">
+                      <img src="assets/img/blog/blog-6.jpg" class="img-fluid" alt="">
+                      <span class="post-date">December 07</span>
+                    </div>
+
+                    <div class="post-content d-flex flex-column">
+
+                      <h3 class="post-title">Distinctio provident quibusdam numquam aperiam aut</h3>
+
+                      <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-person"></i> <span class="ps-2">Julia White</span>
+                        </div>
+                        <span class="px-3 text-black-50">/</span>
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-folder2"></i> <span class="ps-2">Economics</span>
+                        </div>
+                      </div>
+
+                      <p>
+                        Expedita et temporibus eligendi enim molestiae est architecto praesentium dolores. Illo laboriosam officiis quis. Labore officia quia sit voluptatem nisi est dignissimos totam. Et voluptate et consectetur voluptatem id dolor magni impedit. Omnis dolores sit.
+                      </p>
+
+                      <hr>
+
+                      <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+                    </div>
+
+                  </article>
+                </div><!-- End post list item -->
+
+              </div>
             </div>
+
+          </section><!-- /Blog Posts Section -->
+
+          <!-- Blog Pagination Section -->
+          <section id="blog-pagination" class="blog-pagination section">
+
+            <div class="container">
+              <div class="d-flex justify-content-center">
+                <ul>
+                  <li><a href="#"><i class="bi bi-chevron-left"></i></a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#" class="active">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li>...</li>
+                  <li><a href="#">10</a></li>
+                  <li><a href="#"><i class="bi bi-chevron-right"></i></a></li>
+                </ul>
+              </div>
+            </div>
+
+          </section><!-- /Blog Pagination Section -->
+
         </div>
 
-        <div class="container overflow-hidden">
-            <div class="row gy-4 gy-lg-0">
-                <div class="col-12 col-lg-4">
-                    <article>
-                        <div class="card border-0">
-                            <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
-                                <a href="#!">
-                                    <img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy"
-                                        src="{{ asset('template_default/images/image_10.jpg') }}" alt="Business">
-                                </a>
-                                <figcaption>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                        class="bi bi-eye text-white bsb-hover-fadeInLeft" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                                        <path
-                                            d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                                    </svg>
-                                    <h4 class="h6 text-white bsb-hover-fadeInRight mt-2">Read More</h4>
-                                </figcaption>
-                            </figure>
-                            <div class="card-body border bg-white p-4">
-                                <div class="entry-header mb-3">
-                                    <ul class="entry-meta list-unstyled d-flex mb-2">
-                                        <li>
-                                            <a class="link-primary text-decoration-none" href="#!">Business</a>
-                                        </li>
-                                    </ul>
-                                    <h2 class="card-title entry-title h4 mb-0">
-                                        <a class="link-dark text-decoration-none" href="#!">Overcoming Challenges to
-                                            Make a Living Online</a>
-                                    </h2>
-                                </div>
-                                <p class="card-text entry-summary text-secondary">
-                                    Making money online is attainable. However, even if the processes are simple, you
-                                    may still need help with issues.
-                                </p>
-                            </div>
-                            <div class="card-footer border border-top-0 bg-white p-4">
-                                <ul class="entry-meta list-unstyled d-flex align-items-center m-0">
-                                    <li>
-                                        <a class="fs-7 link-secondary text-decoration-none d-flex align-items-center"
-                                            href="#!">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
-                                                <path
-                                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                            </svg>
-                                            <span class="ms-2 fs-7">7 Feb 2023</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <span class="px-3">&bull;</span>
-                                    </li>
-                                    <li>
-                                        <a class="link-secondary text-decoration-none d-flex align-items-center"
-                                            href="#!">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                                <path
-                                                    d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z" />
-                                            </svg>
-                                            <span class="ms-2 fs-7">55</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <article>
-                        <div class="card border-0">
-                            <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
-                                <a href="#!">
-                                    <img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy"
-                                        src="{{ asset('template_default/images/image_9.jpg') }}" alt="Nutrition">
-                                </a>
-                                <figcaption>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                        class="bi bi-eye text-white bsb-hover-fadeInDown" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                                        <path
-                                            d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                                    </svg>
-                                    <h4 class="h6 text-white bsb-hover-fadeInUp mt-2">Read More</h4>
-                                </figcaption>
-                            </figure>
-                            <div class="card-body border bg-white p-4">
-                                <div class="entry-header mb-3">
-                                    <ul class="entry-meta list-unstyled d-flex mb-2">
-                                        <li>
-                                            <a class="link-primary text-decoration-none" href="#!">Nutrition</a>
-                                        </li>
-                                    </ul>
-                                    <h2 class="card-title entry-title h4 mb-0">
-                                        <a class="link-dark text-decoration-none" href="#!">How to Exercise to Achieve
-                                            Your Nutrition Goals</a>
-                                    </h2>
-                                </div>
-                                <p class="card-text entry-summary text-secondary">
-                                    Fitness trainer explains how nutrition is as important as workouts when it comes to
-                                    losing fat or building muscle.
-                                </p>
-                            </div>
-                            <div class="card-footer border border-top-0 bg-white p-4">
-                                <ul class="entry-meta list-unstyled d-flex align-items-center m-0">
-                                    <li>
-                                        <a class="fs-7 link-secondary text-decoration-none d-flex align-items-center"
-                                            href="#!">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
-                                                <path
-                                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                            </svg>
-                                            <span class="ms-2 fs-7">12 Aug 2023</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <span class="px-3">&bull;</span>
-                                    </li>
-                                    <li>
-                                        <a class="link-secondary text-decoration-none d-flex align-items-center"
-                                            href="#!">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                                <path
-                                                    d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z" />
-                                            </svg>
-                                            <span class="ms-2 fs-7">39</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <article>
-                        <div class="card border-0">
-                            <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
-                                <a href="#!">
-                                    <img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy"
-                                        src="{{ asset('template_default/images/image_8.jpg') }}" alt="Health">
-                                </a>
-                                <figcaption>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                        class="bi bi-eye text-white bsb-hover-fadeInRight" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                                        <path
-                                            d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                                    </svg>
-                                    <h4 class="h6 text-white bsb-hover-fadeInLeft mt-2">Read More</h4>
-                                </figcaption>
-                            </figure>
-                            <div class="card-body border bg-white p-4">
-                                <div class="entry-header mb-3">
-                                    <ul class="entry-meta list-unstyled d-flex mb-2">
-                                        <li>
-                                            <a class="link-primary text-decoration-none" href="#!">Health</a>
-                                        </li>
-                                    </ul>
-                                    <h2 class="card-title entry-title h4 mb-0">
-                                        <a class="link-dark text-decoration-none" href="#!">10 Tips To Lose Weight
-                                            Quickly Without Dieting</a>
-                                    </h2>
-                                </div>
-                                <p class="card-text entry-summary text-secondary">
-                                    Chewing slowly and eating more fiber may help you lose weight quickly without
-                                    exercise or a specific diet plan.
-                                </p>
-                            </div>
-                            <div class="card-footer border border-top-0 bg-white p-4">
-                                <ul class="entry-meta list-unstyled d-flex align-items-center m-0">
-                                    <li>
-                                        <a class="fs-7 link-secondary text-decoration-none d-flex align-items-center"
-                                            href="#!">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
-                                                <path
-                                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                            </svg>
-                                            <span class="ms-2 fs-7">21 Dec 2023</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <span class="px-3">&bull;</span>
-                                    </li>
-                                    <li>
-                                        <a class="link-secondary text-decoration-none d-flex align-items-center"
-                                            href="#!">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                                <path
-                                                    d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z" />
-                                            </svg>
-                                            <span class="ms-2 fs-7">61</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
+
+
+      </div>
+    </div>
+
+  </main>
+
 
 </x-mylayouts.layout-prototype>

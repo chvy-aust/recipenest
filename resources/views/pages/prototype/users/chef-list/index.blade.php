@@ -2,92 +2,95 @@
 
 
 
-    <style>
-        .chef-card {
-            min-height: 100px;
-        }
-    </style>
 
-    <div class="card1">
-        <div class="chef-card card mb-3 p-3">
-            <div class="row d-flex align-items-center">
-                <div class="col-md-3 text-center">
-                    <img style="width:150px; height:150px" class="rounded-circle" src="https://placehold.co/600x600"
-                        alt="Image here">
-                </div>
-                <div class="col-md-9">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores sapiente quas at similique
-                        sunt! Officia quo suscipit nostrum aut alias?</p>
+    <!-- Team Section -->
+    <section id="team" class="team section">
 
-                    <a class="btn btn-primary" href="portfolio.html">View Profile</a>
-                    <a class="btn btn-primary" href="portfolio.html">View Portfolio</a>
-                </div>
-            </div>
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <div class="section-title-container d-flex align-items-center justify-content-between">
+          <h2>Team</h2>
+          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
         </div>
-        <div class="chef-card card mb-3 p-3">
-            <div class="row d-flex align-items-center">
-                <div class="col-md-3 text-center">
-                    <img style="width:150px; height:150px" class="rounded-circle"
-                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D"
-                        alt="Image here">
-                </div>
-                <div class="col-md-9">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores sapiente quas at similique
-                        sunt! Officia quo suscipit nostrum aut alias?</p>
+      </div><!-- End Section Title -->
 
-                    <a class="btn btn-primary" href="portfolio.html">View Profile</a>
-                    <a class="btn btn-primary" href="portfolio.html">View Portfolio</a>
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member d-flex align-items-start">
+              <div class="pic"><img src="{{ asset('storage/images/profiles/chef1.jpg') }}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>John Doe</h4>
+                <span>Chief Executive Officer</span>
+                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""> <i class="bi bi-linkedin"></i> </a>
                 </div>
+              </div>
             </div>
-        </div>
-        <div class="chef-card card mb-3 p-3">
-            <div class="row d-flex align-items-center">
-                <div class="col-md-3 text-center">
-                    <img style="width:150px; height:150px" class="rounded-circle" src="https://placehold.co/600x600"
-                        alt="Image here">
-                </div>
-                <div class="col-md-9">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores sapiente quas at similique
-                        sunt! Officia quo suscipit nostrum aut alias?</p>
+          </div><!-- End Team Member -->
 
-                    <a class="btn btn-primary" href="portfolio.html">View Profile</a>
-                    <a class="btn btn-primary" href="portfolio.html">View Portfolio</a>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member d-flex align-items-start">
+              <div class="pic"><img src="{{ asset('storage/images/profiles/chef2.jpg') }}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Jane Doe</h4>
+                <span>Mexican Chef</span>
+                <p>I love cooking and sharing recipes!</p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""> <i class="bi bi-linkedin"></i> </a>
                 </div>
+              </div>
             </div>
-        </div>
-        <div class="chef-card card mb-3 p-3">
-            <div class="row d-flex align-items-center">
-                <div class="col-md-3 text-center">
-                    <img style="width:150px; height:150px" class="rounded-circle" src="https://placehold.co/600x600"
-                        alt="Image here">
-                </div>
-                <div class="col-md-9">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores sapiente quas at similique
-                        sunt! Officia quo suscipit nostrum aut alias?</p>
+          </div><!-- End Team Member -->
 
-                    <a class="btn btn-primary" href="portfolio.html">View Profile</a>
-                    <a class="btn btn-primary" href="portfolio.html">View Portfolio</a>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>William Anderson</h4>
+                <span>CTO</span>
+                <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""> <i class="bi bi-linkedin"></i> </a>
                 </div>
+              </div>
             </div>
-        </div>
-        <div class="chef-card card mb-3 p-3">
-            <div class="row d-flex align-items-center">
-                <div class="col-md-3 text-center">
-                    <img style="width:150px; height:150px" class="rounded-circle" src="https://placehold.co/600x600"
-                        alt="Image here">
-                </div>
-                <div class="col-md-9">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores sapiente quas at similique
-                        sunt! Officia quo suscipit nostrum aut alias?</p>
+          </div><!-- End Team Member -->
 
-                    <a class="btn btn-primary" href="portfolio.html">View Profile</a>
-                    <a class="btn btn-primary" href="portfolio.html">View Portfolio</a>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Amanda Jepson</h4>
+                <span>Accountant</span>
+                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""> <i class="bi bi-linkedin"></i> </a>
                 </div>
+              </div>
             </div>
+          </div><!-- End Team Member -->
+
         </div>
-    </div>
 
+      </div>
 
+    </section><!-- /Team Section -->
 
 
 </x-mylayouts.layout-prototype>

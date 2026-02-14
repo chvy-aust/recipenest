@@ -43,14 +43,14 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">ZenBlog</h1>
+        <h1 class="sitename">RecipeNest</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="single-post.html">Single Post</a></li>
+          <li><a href="about.html">Dashboard</a></li>
+          <li><a href="single-post.html">Recipe List</a></li>
           <li class="dropdown"><a href="#"><span>Categories</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="category.html">Category 1</a></li>
@@ -63,9 +63,9 @@
                   <li><a href="#">Deep Dropdown 5</a></li>
                 </ul>
               </li>
-              <li><a href="category.html">Category 2</a></li>
-              <li><a href="category.html">Category 3</a></li>
-              <li><a href="category.html">Category 4</a></li>
+              <li><a href="category.html">Chef List</a></li>
+              <li><a href="category.html"></a></li>
+              <li><a href="category.html"></a></li>
             </ul>
           </li>
           <li><a href="contact.html">Contact</a></li>
