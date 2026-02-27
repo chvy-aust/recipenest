@@ -1,4 +1,4 @@
-<x-mylayouts.layout-auth>
+<x-mylayouts.layout-prototype>
 
     <style>
 
@@ -68,4 +68,4 @@
         </div>
     </section>
 
-</x-mylayouts.layout-auth>
+</x-mylayouts.layout-prototype>

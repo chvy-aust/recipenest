@@ -10,14 +10,22 @@
             <div class="container">
                 <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
                     <div class="col-12 col-lg-6">
-                        <img class="img-fluid rounded" loading="lazy"
-                            src="{{ asset('storage/images/profiles/harps-joseph-tAvpDE7fXgY-unsplash.jpg') }}"
+
+                        <img class="profile-picture ratio ratio-4x3 rounded" loading="lazy"
+                            src="{{ asset('storage/images/profiles/chef1.jpg') }}"
                             alt="About 2">
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="row justify-content-xl-center">
                             <div class="col-12 col-xl-10">
-                                <h2 class="mb-3">John Doe</h2>
+                                <hr>
+                                <h2 class="mb-3 profile-name">Luigi D'Agostino</h2>
+                                <hr>
+                                <div class="profile badge-bar">
+                                    <span class="badge red">italian connoisseur</span>
+                                    <span class="badge green">vegetarian 🥦</span>
+                                    <span class="bi bi-three-dots"></span>
+                                </div>
                                 <p class="lead fs-4 mb-3 mb-xl-5">With years of experience and deep industry knowledge,
                                     we have a proven track record of success and are constantly pushing ourselves to
                                     stay ahead of the curve.</p>

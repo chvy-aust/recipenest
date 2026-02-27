@@ -13,24 +13,24 @@
 /* Fonts */
 :root {
   --default-font: "EB Garamond",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "EB Garamond",  sans-serif;
+  --heading-font: Poppins, Century Gothic, Arial, san-serif;
   --nav-font: "Inter",  sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #535353; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #465367; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+:root {
+  --background-color: #FBF7F2; /* Background color for the entire website, including individual sections */
+  --default-color: #000000; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #000000; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #000000; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #6a6a6a;  /* The default color of the main navmenu links */
-  --nav-hover-color: #465367; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: #000000;  /* The default color of the main navmenu links */
+  --nav-hover-color: #000000; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #6a6a6a; /* Used for navigation links of the dropdown items in the navigation menu. */
@@ -40,7 +40,7 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f9f9f9;
+  --background-color:  #FBF7F2;
   --surface-color: #ffffff;
 }
 
@@ -143,8 +143,9 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #f2f2f2;
+  --background-color: #6B9C73;
   color: var(--default-color);
+  border: #000000 solid 3px;
   background-color: var(--background-color);
   padding: 10px 0;
   transition: all 0.5s;
@@ -161,10 +162,11 @@ h6 {
 }
 
 .header .logo h1 {
-  font-size: 30px;
-  margin: 0;
-  font-weight: 500;
-  color: var(--heading-color);
+  font-size: 40px;
+  margin: 0px;
+  font-weight: 900;
+  font-display: swap;
+  color: white;
 }
 
 .header .header-social-links {
@@ -226,9 +228,9 @@ h6 {
   .navmenu a:focus {
     color: var(--nav-color);
     padding: 18px 15px;
-    font-size: 14px;
+    font-size: 15px;
     font-family: var(--nav-font);
-    font-weight: 400;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -238,7 +240,7 @@ h6 {
 
   .navmenu a i,
   .navmenu a:focus i {
-    font-size: 12px;
+    font-size: 30px;
     line-height: 0;
     margin-left: 5px;
     transition: 0.3s;
@@ -315,9 +317,9 @@ h6 {
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
-    font-size: 28px;
+    font-size: 40px;
     line-height: 0;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     cursor: pointer;
     transition: color 0.3s;
   }
@@ -681,7 +683,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 40px 0;
+  padding: 10px 0;
   scroll-margin-top: 90px;
   overflow: clip;
 }
@@ -698,7 +700,7 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   position: relative;
 }
 
@@ -1267,7 +1269,6 @@ section,
 --------------------------------------------------------------*/
 .team .team-member {
   background-color: var(--surface-color);
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   position: relative;
   border-radius: 5px;
   transition: 0.5s;
@@ -1285,27 +1286,36 @@ section,
 
 .team .team-member .pic {
   overflow: hidden;
-  width: 150px;
-  border-radius: 50%;
+  width: 200px;
+  height: 250px;
+  /* border-radius: 50%; */
   flex-shrink: 0;
+  border: black solid 3px;
 }
 
 .team .team-member .pic img {
   transition: ease-in-out 0.3s;
+  width: 100%;
+  height:100%;
+  object-fit: cover;
 }
 
 .team .team-member:hover {
   transform: translateY(-10px);
+  box-shadow: #000000 3px 3px 0px;
+  cursor: pointer;
 }
 
 .team .team-member .member-info {
   padding-left: 30px;
+  width: 100%;
 }
 
 @media (max-width: 468px) {
   .team .team-member .member-info {
     padding: 30px 0 0 0;
     text-align: center;
+    width: 100%;
   }
 }
 
@@ -1340,16 +1350,16 @@ section,
   }
 }
 
-.team .team-member p {
+/* .team .team-member p {
   margin: 10px 0 0 0;
   font-size: 14px;
-}
+} */
 
 .team .team-member .social {
   margin-top: 12px;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: end;
   width: 100%;
 }
 
@@ -1372,7 +1382,7 @@ section,
 
 .team .team-member .social a i {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
-  font-size: 16px;
+  font-size: 20px;
   margin: 0 2px;
 }
 
@@ -1741,7 +1751,6 @@ section,
 
 .blog-posts hr {
   color: color-mix(in srgb, var(--default-color), transparent 60%);
-  margin-bottom: 15px;
 }
 
 .blog-posts .readmore {
@@ -2090,3 +2099,225 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin: 10px 0 0 0;
 }
+
+
+/*--------------------------------------------------------------
+# RECIPENEST-SPECIFIC STYLING
+--------------------------------------------------------------*/
+
+.sitename {
+    -webkit-text-stroke: 2px #000000;
+    text-shadow: #000000 3px 3px 0px;
+    color: white;
+}
+
+.section-title h2 {
+  color:#6B9C73;
+  -webkit-text-stroke: 2px #000000;
+  text-shadow: #000000 3px 3px 0px;
+  font-weight: 900;
+  font-size: 40px;
+}
+
+.search-bar {
+    border: black solid 3px;
+    border-radius: 5px;
+    height: 32px;
+    width: 100%;
+    margin-left: 20px;
+    padding-left: 5px;
+    background-color: white;
+
+}
+
+.search-bar i {
+    color: #000;
+}
+
+.search-bar input {
+    border: none;
+    padding:0px, 5px;
+    width: 90%;
+}
+
+.search-bar:focus {
+    border: none;
+    padding:0px, 5px;
+}
+
+.search-btn {
+    margin-left: 10px;
+    border: black solid 3px;
+    background-color: #6B9C73;
+    border-radius: 5px;
+    height: 32px;
+    font-weight: bold;
+    font-size: 20px;
+    transition:0.2s ease-in-out;
+    text-align: center;
+}
+
+.search-btn:hover {
+    background-color: #557b5b;
+    cursor: pointer;
+}
+
+
+.team .team-member {
+    border: black solid 3px;
+}
+
+.badge-bar {
+    display: flex;
+    font-size: 15px;
+    padding-bottom: 10px;
+    flex-wrap: nowrap;
+    gap: 5px;
+}
+
+.badge {
+    border-radius: 5px;
+    border: #000 solid 2px;
+    color: black;
+}
+
+.more-btn {
+    border: none;
+    background: none;
+    color: black;
+    font-weight: bold;
+}
+
+
+.red {
+    background-color: rgb(202, 135, 135);
+}
+
+.blue {
+    background-color: rgb(131, 131, 183);
+}
+
+.green {
+    background-color: rgb(168, 208, 168);
+}
+
+.yellow {
+    background-color: rgb(208, 206, 168);
+}
+
+.purple {
+    background-color: rgb(208, 168, 206);
+}
+
+.filter {
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-variant: small-caps;
+}
+
+.filter i {
+    margin-right: 5px;
+}
+
+.team .team-member .member-info .bio {
+    background-color: #faf9f9;
+    border: #e2e2e2 solid 1px;
+    font-size: 15px;
+    height: 150px;
+    width: 100%;
+    margin: 15px 0px;
+    padding: 5px 8px
+}
+
+.team .team-member .member-info hr {
+    margin: 0px;
+}
+
+
+
+.view-portfolio-button {
+    height: 30px;
+    align-self: flex-end;
+    width: fit-content;
+    border: black solid 2px;
+    padding: none;
+    background: none;
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+    font-weight: bold;
+}
+
+.account-icon i {
+    font-size: 40px;
+    color: black;
+    cursor: pointer;
+}
+
+.portfolio-link {
+    font-weight: bold;
+    font-size: 20px;
+
+    padding: 2px 8px;
+}
+
+
+.portfolio-tag {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+}
+
+.top-bar {
+    background-color: rgb(216, 230, 220);
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    padding: 10px;
+    justify-content: center;
+}
+
+
+/*--------------------------------------------------------------
+# RECIPENEST-SPECIFIC STYLING - USER PROFILE SECTION
+--------------------------------------------------------------*/
+
+.profile-picture {
+    border: black solid 3px;
+    max-height:550px;
+    object-fit: cover;
+    object-position: center 10%;
+}
+
+.profile-name {
+    font-size: 25;
+    background-color: #6B9C73;
+    border: black solid 3px;
+    padding: 8px 0px;
+    width: 100%;
+    text-align: center;
+    font-weight: 900;
+    -webkit-text-stroke: 2px #000000;
+    color: white;
+}
+
+.profile-role {
+    font-weight: 900;
+    font-size: 40px;
+    font-style: normal;
+    text-transform: capitalize;
+    color:  #6B9C73;
+    -webkit-text-stroke: 2px #000000;
+    text-shadow: #000000 3px 3px 0px;
+}
+
+.profile .badge-bar {
+    font-size: 25px;
+}
+
+@media (min-width: 1200) {
+
+}
+

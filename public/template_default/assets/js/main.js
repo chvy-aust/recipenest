@@ -121,4 +121,37 @@
 
   window.addEventListener("load", initSwiper);
 
+//   RECIPE NEST SPECIFIC FUNCTIONS
+
+  /* Toggle/Hide badges */
+  function loadBadges() {
+    document.querySelectorAll('.badge-bar').forEach(bar => {
+        const badges = bar.querySelectorAll('.badge');
+        const moreBtn = bar.querySelector('.more-btn');
+        let remainingWidth = bar.offsetWidth - (moreBtn.offsetWidth + 5);
+
+        moreBtn.style.display = 'none'
+        badges.forEach(badge => {
+            badge.style.display = 'inline-block'
+        })
+
+        for (let i = 0; i < badges.length; i++) {
+            const badgeWidth = badges[i].offsetWidth + 5;
+            if (badgeWidth <= remainingWidth) {
+                remainingWidth -= badgeWidth;
+            } else {
+                let moreCount = badges.length - i;
+                for (let j = i; j < badges.length; j++) {
+                    badges[j].style.display = 'none'
+                }
+                moreBtn.textContent = `+${moreCount}`;
+                moreBtn.style.display = 'inline-block'
+                break
+            }
+        }
+    })
+  }
+
+  window.addEventListener("load", loadBadges)
+  window.addEventListener("resize", loadBadges)
 })();
