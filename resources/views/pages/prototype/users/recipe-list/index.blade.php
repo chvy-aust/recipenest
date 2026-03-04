@@ -7,16 +7,19 @@
   <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title position-relative">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Category</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Categories</li>
-          </ol>
-        </nav>
-      </div>
+    <div class="container section-title" data-aos="fade-up" style="margin-top:10px;">
+        <div class="section-title-container d-flex align-items-center justify-content-between">
+          <div class="breadcrumb-section">
+            <a href="#" class="previous">home /</a>
+            <h2>RECIPES</h2>
+         </div>
+            <input class="search-bar" type="text" placeholder=" searching for delicious recipes ... ">
+            <button class="search-btn"><i class="bi bi-search-heart-fill"></i>SEARCH</button>
+        </div>
+        <div class="container d-flex align-items-left filter">
+            <a href=""><i class="bi bi-sort-down-alt"></i></a>
+            <p>filter</p>
+        </div>
     </div><!-- End Page Title -->
 
     <div class="container">
@@ -34,31 +37,34 @@
                   <article class="position-relative h-100">
 
                     <div class="post-img position-relative overflow-hidden">
-                      <img style="width: 100%; height: 400px" src="{{ asset('storage/images/media/recipe1.png') }}" class="img-fluid" alt="">
-                      <span class="post-date">December 12</span>
+                      <img class="recipe-list-img" src="{{ asset('storage/images/media/recipe1.png') }}" alt="">
                     </div>
 
                     <div class="post-content d-flex flex-column">
 
                       <h3 class="post-title">Red Lentil Protein Waffles</h3>
-
+                      <hr style="margin:0px 0px 15px 0px;">
                       <div class="meta d-flex align-items-center">
                         <div class="d-flex align-items-center">
-                          <i class="bi bi-person"></i> <span class="ps-2">John Doe</span>
+                           <i class="bi bi-person-square"></i><span class="ps-2">Darcy Wallaker </span>
                         </div>
-                        <span class="px-3 text-black-50">/</span>
+                        <span class="px-3 text-black-50">|</span>
                         <div class="d-flex align-items-center">
-                          <i class="bi bi-folder2"></i> <span class="ps-2">Vegetarian</span>
+                          <i class="bi bi-clock-fill"></i> <span class="ps-2">February 21st, 2026</span>
                         </div>
                       </div>
 
                       <p>
-                       These waffles are for those who want a sweet start to the morning but also know how important it is to begin the day with a bit of protein.
-                      </p>
+                       These beautiful waffles are for those who want a sweet start to the morning but also know how important it is to begin the day with a bit...
 
-                      <hr>
+                      <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                           <i class="bi bi-tags-fill"></i><span class="ps-2">Tags: Breakfast and Brunch, Sweet, Pastry...</span>
+                        </div>
+                      </div>
+                      <hr style="margin:15px 0px 15px 0px;">
 
-                      <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                      <a href="#" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
 
                     </div>
 
@@ -69,7 +75,7 @@
                   <article class="position-relative h-100">
 
                     <div class="post-img position-relative overflow-hidden">
-                      <img style="width: 100%; height: 400px" src="{{ asset('storage/images/media/recipe2.jpg') }}" class="img-fluid" alt="">
+                      <img class="recipe-list-img" src="{{ asset('storage/images/media/recipe2.jpg') }}" class="img-fluid" alt="">
                       <span class="post-date">March 19</span>
                     </div>
 
@@ -104,7 +110,7 @@
                   <article class="position-relative h-100">
 
                     <div class="post-img position-relative overflow-hidden">
-                      <img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt="">
+                      <img class="recipe-list-img" src="assets/img/blog/blog-3.jpg" class="img-fluid" alt="">
                       <span class="post-date">June 24</span>
                     </div>
 
@@ -139,7 +145,7 @@
                   <article class="position-relative h-100">
 
                     <div class="post-img position-relative overflow-hidden">
-                      <img src="assets/img/blog/blog-4.jpg" class="img-fluid" alt="">
+                      <img class="recipe-list-img" src="assets/img/blog/blog-4.jpg" class="img-fluid" alt="">
                       <span class="post-date">August 05</span>
                     </div>
 

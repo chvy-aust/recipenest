@@ -136,14 +136,11 @@
 
   </main>
 
-  <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer">
 
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">ZenBlog</span>
-          </a>
           <div class="footer-contact pt-3">
             <p>A108 Adam Street</p>
             <p>New York, NY 535022</p>

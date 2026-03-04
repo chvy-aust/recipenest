@@ -445,9 +445,11 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: #6B9C73;
+  border: black solid 3px;
   font-size: 14px;
   position: relative;
+  margin-top: 20px;
 }
 
 .footer .footer-top {
@@ -607,7 +609,8 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: #6B9C73;
+  border: black solid 3px;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -616,7 +619,7 @@ h6 {
 
 .scroll-top i {
   font-size: 24px;
-  color: var(--contrast-color);
+  color: black;
   line-height: 0;
 }
 
@@ -705,6 +708,8 @@ section,
 }
 
 .section-title .section-title-container {
+  display:flex;
+  align-items: flex-end;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--default-color);
 }
@@ -1265,9 +1270,9 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Team Section
+# chef Section
 --------------------------------------------------------------*/
-.team .team-member {
+.chef .chef-member {
   background-color: var(--surface-color);
   position: relative;
   border-radius: 5px;
@@ -1277,14 +1282,14 @@ section,
 }
 
 @media (max-width: 468px) {
-  .team .team-member {
+  .chef .chef-member {
     flex-direction: column;
     justify-content: center !important;
     align-items: center !important;
   }
 }
 
-.team .team-member .pic {
+.chef .chef-member .pic {
   overflow: hidden;
   width: 200px;
   height: 250px;
@@ -1293,39 +1298,39 @@ section,
   border: black solid 3px;
 }
 
-.team .team-member .pic img {
+.chef .chef-member .pic img {
   transition: ease-in-out 0.3s;
   width: 100%;
   height:100%;
   object-fit: cover;
 }
 
-.team .team-member:hover {
+.chef .chef-member:hover {
   transform: translateY(-10px);
   box-shadow: #000000 3px 3px 0px;
   cursor: pointer;
 }
 
-.team .team-member .member-info {
+.chef .chef-member .member-info {
   padding-left: 30px;
   width: 100%;
 }
 
 @media (max-width: 468px) {
-  .team .team-member .member-info {
+  .chef .chef-member .member-info {
     padding: 30px 0 0 0;
     text-align: center;
     width: 100%;
   }
 }
 
-.team .team-member h4 {
+.chef .chef-member h4 {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
 }
 
-.team .team-member span {
+.chef .chef-member span {
   display: block;
   font-size: 15px;
   padding-bottom: 10px;
@@ -1333,7 +1338,7 @@ section,
   font-weight: 500;
 }
 
-.team .team-member span::after {
+.chef .chef-member span::after {
   content: "";
   position: absolute;
   display: block;
@@ -1345,17 +1350,17 @@ section,
 }
 
 @media (max-width: 468px) {
-  .team .team-member span::after {
+  .chef .chef-member span::after {
     left: calc(50% - 25px);
   }
 }
 
-/* .team .team-member p {
+/* .chef .chef-member p {
   margin: 10px 0 0 0;
   font-size: 14px;
 } */
 
-.team .team-member .social {
+.chef .chef-member .social {
   margin-top: 12px;
   display: flex;
   align-items: center;
@@ -1364,12 +1369,12 @@ section,
 }
 
 @media (max-width: 468px) {
-  .team .team-member .social {
+  .chef .chef-member .social {
     justify-content: center;
   }
 }
 
-.team .team-member .social a {
+.chef .chef-member .social a {
   background: color-mix(in srgb, var(--default-color), transparent 94%);
   transition: ease-in-out 0.3s;
   display: flex;
@@ -1380,21 +1385,21 @@ section,
   height: 36px;
 }
 
-.team .team-member .social a i {
+.chef .chef-member .social a i {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   font-size: 20px;
   margin: 0 2px;
 }
 
-.team .team-member .social a:hover {
+.chef .chef-member .social a:hover {
   background: var(--accent-color);
 }
 
-.team .team-member .social a:hover i {
+.chef .chef-member .social a:hover i {
   color: var(--contrast-color);
 }
 
-.team .team-member .social a+a {
+.chef .chef-member .social a+a {
   margin-left: 8px;
 }
 
@@ -1417,6 +1422,8 @@ section,
   padding: 30px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .blog-details .post-img {
   margin: -30px -30px 20px -30px;
@@ -1703,9 +1710,18 @@ section,
 --------------------------------------------------------------*/
 .blog-posts article {
   background-color: var(--surface-color);
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1); */
   transition: 0.3s;
+  border: black solid 3px;
+  border-radius: 5px;
 }
+
+.blog-posts article:hover {
+    transform: translateY(-10px);
+    box-shadow: #000000 3px 3px 0px;
+    cursor: pointer;
+}
+
 
 .blog-posts .post-img img {
   transition: 0.5s;
@@ -1724,7 +1740,7 @@ section,
 }
 
 .blog-posts .post-content {
-  padding: 30px;
+  padding: 15px 30px;
 }
 
 .blog-posts .post-title {
@@ -1737,7 +1753,7 @@ section,
 
 .blog-posts .meta i {
   font-size: 16px;
-  color: var(--accent-color);
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 
 .blog-posts .meta span {
@@ -2117,6 +2133,7 @@ section,
   text-shadow: #000000 3px 3px 0px;
   font-weight: 900;
   font-size: 40px;
+
 }
 
 .search-bar {
@@ -2127,23 +2144,9 @@ section,
     margin-left: 20px;
     padding-left: 5px;
     background-color: white;
-
+    flex: 1;
 }
 
-.search-bar i {
-    color: #000;
-}
-
-.search-bar input {
-    border: none;
-    padding:0px, 5px;
-    width: 90%;
-}
-
-.search-bar:focus {
-    border: none;
-    padding:0px, 5px;
-}
 
 .search-btn {
     margin-left: 10px;
@@ -2153,17 +2156,18 @@ section,
     height: 32px;
     font-weight: bold;
     font-size: 20px;
-    transition:0.2s ease-in-out;
     text-align: center;
-}
-
-.search-btn:hover {
-    background-color: #557b5b;
+    width: fit-content;
     cursor: pointer;
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+}
+
+.search-btn i {
+    margin-right: 5px;
 }
 
 
-.team .team-member {
+.chef .chef-member {
     border: black solid 3px;
 }
 
@@ -2179,6 +2183,7 @@ section,
     border-radius: 5px;
     border: #000 solid 2px;
     color: black;
+    padding: 5px !important;
 }
 
 .more-btn {
@@ -2220,17 +2225,32 @@ section,
     margin-right: 5px;
 }
 
-.team .team-member .member-info .bio {
+.chef .chef-member .member-info .bio {
     background-color: #faf9f9;
     border: #e2e2e2 solid 1px;
     font-size: 15px;
-    height: 150px;
+    height: 110px;
     width: 100%;
     margin: 15px 0px;
-    padding: 5px 8px
+    padding: 5px 8px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
-.team .team-member .member-info hr {
+.read-more-btn {
+    height: 30px;
+    padding-top: 10px;
+    font-size: 20px;
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+    font-weight: bold;
+    text-align: right;
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+}
+
+.chef .chef-member .member-info hr {
     margin: 0px;
 }
 
@@ -2256,7 +2276,6 @@ section,
 .portfolio-link {
     font-weight: bold;
     font-size: 20px;
-
     padding: 2px 8px;
 }
 
@@ -2286,21 +2305,57 @@ section,
 
 .profile-picture {
     border: black solid 3px;
-    max-height:550px;
+    max-height: 450px;
+    max-width: 100%;
     object-fit: cover;
     object-position: center 10%;
 }
 
-.profile-name {
-    font-size: 25;
+.profile-picture-card {
     background-color: #6B9C73;
-    border: black solid 3px;
+    border: black solid 2px;
+}
+
+.profile-name {
     padding: 8px 0px;
     width: 100%;
+    margin: 10px 0px 0px 0px;
+    background-color: #6B9C73;
+    border: black solid 3px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-name h2 {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Poppins, Century Gothic, Arial, san-serif;
     text-align: center;
-    font-weight: 900;
-    -webkit-text-stroke: 2px #000000;
-    color: white;
+    flex-grow: 1;
+}
+
+.profile-name i {
+    font-size: 25px;
+    color: black;
+    margin-left: 10px;
+}
+
+.profile-contact-info  {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    gap: 15px;
+    padding: 0px 15px;
+}
+
+.profile-contact-info i {
+    font-size: 22px;
+}
+
+.profile-contact-info i:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .profile-role {
@@ -2313,11 +2368,62 @@ section,
     text-shadow: #000000 3px 3px 0px;
 }
 
+.profile-bio {
+    border: grey solid 1px;
+    padding: 5px 15px;
+    font-size: 20px;
+    background-color: #f3f2f2;
+    text-align: justify;
+    color: rgb(117, 116, 116);
+    margin-bottom: 0px;
+    flex: 1;
+}
+
 .profile .badge-bar {
     font-size: 25px;
 }
 
-@media (min-width: 1200) {
-
+.view-portfolio-btn {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
+.view-portfolio-btn:hover {
+    border-bottom: black solid 2px;
+    cursor: pointer;
+}
+
+.view-portfolio-btn h2 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+    padding-top:5px;
+}
+
+.view-portfolio-btn i {
+    font-size: 25px;
+}
+
+.breadcrumb-section {
+    display: flex;
+    gap:10px;
+}
+.breadcrumb-section .previous {
+    cursor: pointer;
+}
+
+.profile-left {
+    display:flex;
+    flex-direction: column;
+    height:100%;
+}
+/*--------------------------------------------------------------
+# RECIPENEST-SPECIFIC STYLING - RECIPE LIST SECTION
+--------------------------------------------------------------*/
+
+.recipe-list-img {
+  max-height:250px;
+  width: 100%;
+  object-fit: cover;
+}
