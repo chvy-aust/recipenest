@@ -23,6 +23,8 @@
 
         <div class="row gy-4">
 
+            
+
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="chef-member d-flex align-items-start">
               <div class="pic"><img src="{{ asset('storage/images/profiles/luigi-agostino-chef.jpg') }}" class="img-fluid" alt=""></div>
@@ -75,7 +77,8 @@
 
               </div>
             </div>
-          </div><!-- End chef Member -->
+          </div>
+          <!-- End chef Member -->
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
             <div class="chef-member d-flex align-items-start">

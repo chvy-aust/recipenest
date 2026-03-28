@@ -2,21 +2,19 @@
 
   <main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Single Post</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Single Post</li>
-          </ol>
-        </nav>
-      </div>
-    </div><!-- End Page Title -->
 
     <div class="container">
       <div class="row">
+        <!-- Page Title -->
+    <div class="container section-title" data-aos="fade-up" style="margin-top:10px; padding-left:23px;">
+        <div class="section-title-container d-flex align-items-center justify-content-between">
+          <div class="breadcrumb-section">
+            <a href="#" class="previous">home /</a>
+            <a href="#" class="previous">recipes /</a>
+            <a href="#" class="previous">Miso Soup with Tofu & Bamboo</a>
+          </div>
+        </div>
+    </div><!-- End Page Title -->
 
         <div class="col-lg-8">
 
@@ -27,41 +25,94 @@
               <article class="article">
 
                 <div class="post-img">
-                  <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                  <img src="{{ asset('storage/images/media/recipe6.jpg') }}" alt="" class="img-fluid h-250">
                 </div>
 
-                <h2 class="title">Miso Oatmeal with Charred Kale & Soft Boiled Eggs</h2>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2 class="title" style="margin-top:5px; margin-bottom:5px;">Miso Soup with Tofu & Bamboo</h2>
+                    <i class="bi bi-share-fill" style="font-size:20px;"></i>
+                </div>
 
-                <div class="meta-top">
-                  <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2020-01-01">Jan 1, 2022</time></a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                  </ul>
-                </div><!-- End meta top -->
+
+                <hr style="margin:10px 0px 15px 0px;">
+                      <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                           <i class="bi bi-person-square" style="color:grey;"></i><span class="ps-2" style="color:grey;">Jia Xifeng</span>
+                        </div>
+                        <span class="px-3 text-black-50" style="color:grey;">|</span>
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-clock-fill" style="color:grey;"></i> <span class="ps-2" style="color:grey;">January 1st, 2026</span>
+                        </div>
+                        <span class="px-3 text-black-50" style="color:grey;">|</span>
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-chat-dots-fill" style="color:grey;"></i> <span class="ps-2" style="color:grey;">12</span>
+                        </div>
+                      </div><!-- End meta top -->
 
                 <div class="content">
                   <p>
-                    Lately, I’m a savory oatmeal evangelist. This dish is warm, comforting, nutrient dense, and perfect for literally any meal. The possibilities are endless when it comes to toppings, flavor-bases, and even the type of oats you use.</p>
+                    Hello friends! Ji-Ji here. You know, the smells and tastes of my childhood aren't in a fancy restaurant or a bustling market. They’re in my grandmother’s small kitchen, watching her hands move with a love that only decades of cooking can bring. For me, comfort has a specific flavor. It's the gentle, savory warmth of her miso soup.
 
-                  <p>
-                    This recipe serves as a basic introduction for anyone new to the concept of a savory oatmeal you can have for dinner. I’m calling for steel-cut oats here, as they retain a bit of texture even when cooked.
+                    This recipe is my personal take on that classic comfort, but it’s also my way of keeping her close. It’s built on the same humble, beautiful ingredients she used, each one bringing its own texture and story to the bowl. So! Let me not keep you waiting and me share it with you!
                 </p>
+
+                  <hr>
+
+                <p><strong>Servings:</strong> 4<br>
+                <strong>Prep time:</strong> 10 minutes<br>
+                <strong>Cook time:</strong> 15 minutes</p>
+
+                <hr>
+
+                <h2>Ingredients</h2>
+                <hr>
+                <p><strong>Broth Base</strong><br>
+                4 cups water<br>
+                1 piece kombu (5cm)<br>
+                1/2 cup bonito flakes (or 1 tsp vegetarian dashi powder)<br>
+                2–3 tbsp white miso paste</p>
+
+                <p><strong>Add-ins</strong><br>
+                150g silken tofu, cubed<br>
+                2 tbsp dried wakame, rehydrated<br>
+                1/2 cup shiitake mushrooms, stemmed and sliced<br>
+                1/3 cup bamboo shoots, thinly sliced</p>
+
+                <p><strong>Garnish</strong><br>
+                2-3 scallions, thinly sliced</p>
+
+                <hr>
+
+                <h2>Instructions</p></h2>
+
+                <hr>
+
+                <p><strong>1. Make the dashi</strong><br>
+                Place water and kombu in a pot over medium heat.<br>
+                Remove kombu just before boiling.<br>
+                Add bonito flakes, bring to a boil, then turn off heat. Let steep 2-3 minutes.<br>
+                Strain broth through a fine-mesh sieve. Return liquid to pot.</p>
+
+                <p><strong>2. Add the miso</strong><br>
+                Reduce heat to low. Do not boil.<br>
+                In a small bowl, whisk miso with a ladle of warm broth until smooth.<br>
+                Stir miso mixture back into the pot.</p>
+
+                <p><strong>3. Add the ingredients</strong><br>
+                Gently add tofu, wakame, mushrooms, and bamboo shoots.<br>
+                Simmer on low for 2-3 minutes until warmed through.</p>
+
+                <p><strong>4. Serve</strong><br>
+                Ladle into bowls and garnish with scallions.</p>
                   <img src="assets/img/blog/blog-inside-post.jpg" class="img-fluid" alt="">
                 </div><!-- End post content -->
 
                 <div class="meta-bottom">
-                  <i class="bi bi-folder"></i>
-                  <ul class="cats">
-                    <li><a href="#">Business</a></li>
-                  </ul>
-
-                  <i class="bi bi-tags"></i>
-                  <ul class="tags">
-                    <li><a href="#">Creative</a></li>
-                    <li><a href="#">Tips</a></li>
-                    <li><a href="#">Marketing</a></li>
-                  </ul>
+                  <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                           <i class="bi bi-tags-fill"></i><span class="ps-2" style="color:grey;">Tags: Japanese, Vegetarian, Beginner Friendly, Soup</span>
+                        </div>
+                      </div>
                 </div><!-- End meta bottom -->
 
               </article>
@@ -209,34 +260,47 @@
 
         <div class="col-lg-4 sidebar">
 
-          <div class="widgets-container">
+          <div class="widgets-container" style="margin-top:17px;">
 
             <!-- Blog Author Widget -->
-            <div class="blog-author-widget widget-item">
+            <div class="blog-author-widget widget-item" style="border:black solid 3px;">
 
-              <div class="d-flex flex-column align-items-center">
-                <div class="d-flex align-items-center w-100">
-                  <img src="assets/img/blog/blog-author.jpg" class="rounded-circle flex-shrink-0" alt="">
-                  <div>
-                    <h4>Jane Smith</h4>
-                    <div class="social-links">
-                      <a href="https://x.com/#"><i class="bi bi-twitter-x"></i></a>
-                      <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
-                      <a href="https://instagram.com/#"><i class="biu bi-instagram"></i></a>
-                      <a href="https://instagram.com/#"><i class="biu bi-linkedin"></i></a>
+              <div class="d-flex flex-column">
+                <div class="d-flex align-items-center">
+                  <img src="{{ asset('storage/images/profiles/jia-xifeng-chef.jpg') }}" class="rounded flex-shrink-0" alt="" style="border:black solid 3px; max-height: 200px;">
+                  {{-- img rounded-circle --}}
+                  <div class="flex-grow-1" style="padding-right:15px;">
+                    <div class="badge-bar">
+                        <span class="badge green">veteran chef</span>
+                        <span class="badge red">communitity favourite</span>
+                        <span class="badge red">sweet tooth</span>
+                        <span class="badge green">verified</span>
+                        <button class="more-btn"></button>
                     </div>
+                    <h4 class="blog-author-name">Jia Xifeng</h4>
                   </div>
                 </div>
 
+                <hr style="margin:15px 0px;">
+
                 <p>
-                  Itaque quidem optio quia voluptatibus dolorem dolor. Modi eum sed possimus accusantium. Quas repellat voluptatem officia numquam sint aspernatur voluptas. Esse et accusantium ut unde voluptas.
+                 Hi Hello! My name is Jia and I love love making food! I
+                 have been in the industry for over 15 years
+                 with my own family-run restaurant. We love everything plant-based
+                 over here and I look forward to sharing my recipes with you all.
+                </p>
+
+                <hr style="margin:15px 0px;">
+
+                <p style="font-weight:bold;">
+                    View Profile >
                 </p>
 
               </div>
 
             </div><!--/Blog Author Widget -->
 
-            <!-- Search Widget -->
+            {{-- <!-- Search Widget -->
             <div class="search-widget widget-item">
 
               <h3 class="widget-title">Search</h3>
@@ -245,51 +309,88 @@
                 <button type="submit" title="Search"><i class="bi bi-search"></i></button>
               </form>
 
-            </div><!--/Search Widget -->
+            </div><!--/Search Widget --> --}}
 
             <!-- Recent Posts Widget -->
-            <div class="recent-posts-widget widget-item">
+            <div class="recent-posts-widget widget-item" style="border:black solid 3px;">
 
-              <h3 class="widget-title">Recent Posts</h3>
+              <h3 class="widget-title">More Posts like This</h3>
+
+              <hr style="margin: 10px 0px 15px 0px;">
 
               <div class="post-item">
-                <img src="assets/img/blog/blog-recent-1.jpg" alt="" class="flex-shrink-0">
+                <img src="{{ asset('storage/images/media/recipe7.jpg') }}" alt="" class="flex-shrink-0 rounded">
                 <div>
-                  <h4><a href="blog-details.html">Nihil blanditiis at in nihil autem</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
+                  <h4><a href="blog-details.html">Constellation Cauliflower Soup</a></h4>
+                  <div class="meta-bottom">
+                  <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                           <i class="bi bi-tags-fill" style="color:grey;"></i><span class="ps-2" style="color:grey;">Tags: Soup, Beginner Friendly...</span>
+                        </div>
+                      </div>
+                </div>
+                </div>
+              </div><!-- End recent post item-->
+
+              <hr>
+              <div class="post-item">
+                <img src="{{ asset('storage/images/media/recipe8.jpg') }}" alt="" class="flex-shrink-0 rounded">
+                <div>
+                  <h4><a href="blog-details.html">Eel Rice Bowl (Unadon)</a></h4>
+                  <div class="meta-bottom">
+                  <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                           <i class="bi bi-tags-fill" style="color:grey;"></i><span class="ps-2" style="color:grey;">Tags: Japanese, Sweet & Savory...</span>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              </div>
+
+              <hr>
+              <div class="post-item">
+                <img src="{{ asset('storage/images/media/recipe9.jpg') }}" alt="" class="flex-shrink-0 rounded">
+                <div>
+                  <h4><a href="blog-details.html">Miso-Glazed Eggplant</a></h4>
+                  <div class="meta-bottom">
+                  <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                           <i class="bi bi-tags-fill" style="color:grey;"></i><span class="ps-2" style="color:grey;">Tags: Sweet & Savory, Vegetarian...</span>
+                        </div>
+                      </div>
+                </div>
                 </div>
               </div><!-- End recent post item-->
 
               <div class="post-item">
-                <img src="assets/img/blog/blog-recent-2.jpg" alt="" class="flex-shrink-0">
+                <img src="{{ asset('storage/images/media/recipe7.jpg') }}" alt="" class="flex-shrink-0 rounded">
                 <div>
-                  <h4><a href="blog-details.html">Quidem autem et impedit</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
+                  <h4><a href="blog-details.html">Constellation Cauliflower Soup</a></h4>
+                  <div class="meta-bottom">
+                  <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                           <i class="bi bi-tags-fill" style="color:grey;"></i><span class="ps-2" style="color:grey;">Tags: Soup, Beginner Friendly...</span>
+                        </div>
+                      </div>
                 </div>
+              </div>
               </div><!-- End recent post item-->
 
               <div class="post-item">
-                <img src="assets/img/blog/blog-recent-3.jpg" alt="" class="flex-shrink-0">
+                <img src="{{ asset('storage/images/media/recipe7.jpg') }}" alt="" class="flex-shrink-0 rounded">
                 <div>
-                  <h4><a href="blog-details.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
+                  <h4><a href="blog-details.html">Constellation Cauliflower Soup</a></h4>
+                  <div class="meta-bottom">
+                  <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                           <i class="bi bi-tags-fill" style="color:grey;"></i><span class="ps-2" style="color:grey;">Tags: Soup, Beginner Friendly...</span>
+                        </div>
+                      </div>
                 </div>
+              </div>
               </div><!-- End recent post item-->
 
-              <div class="post-item">
-                <img src="assets/img/blog/blog-recent-4.jpg" alt="" class="flex-shrink-0">
-                <div>
-                  <h4><a href="blog-details.html">Laborum corporis quo dara net para</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-              </div><!-- End recent post item-->
 
-              <div class="post-item">
-                <img src="assets/img/blog/blog-recent-5.jpg" alt="" class="flex-shrink-0">
-                <div>
-                  <h4><a href="blog-details.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
               </div><!-- End recent post item-->
 
             </div><!--/Recent Posts Widget -->

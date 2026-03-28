@@ -37,8 +37,8 @@ class Recipe extends Model
     {
         $query->where('id', '>', 0)
             ->with('user')
-            ->where('public', true)
-            ->orderBy('publish_date', 'desc');
+            ->where('published', true)
+            ->orderBy('created_at', 'desc');
     }
 
     public function scopeRecipe(Builder $query, string $id)

@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="row justify-content-xl-center">
-                            <div class="col-12 col-xl-10 profile-left">
+                            <div class="col-12 col-xl-10">
                                 <div class="d-flex align-items-center profile-name">
                                     <i class="bi bi-person-bounding-box"></i>
                                     <h2> Luigi D'Agostino</h2>
@@ -51,9 +51,9 @@
                                 </div>
                                 <hr style="margin:10px 0px;">
                                 <div class="view-portfolio-btn">
-                                    <i class="bi bi-caret-down-fill"></i>
+                                    <i class="bi bi-caret-up-fill"></i>
                                     <h2>View Portfolio</h2>
-                                    <i class="bi bi-caret-down-fill"></i>
+                                    <i class="bi bi-caret-up-fill"></i>
                                 </div>
                             </div>
                         </div>
@@ -63,126 +63,165 @@
         </section>
     </section>
 
-
-
-
-    <style>
-        .profile-social-media {
-            width: 80%;
-            margin: auto;
-        }
-    </style>
-    <section class="profile-social-media my-5">
-
-        {{-- Source: https://www.aakashweb.com/apps/social-buttons-generator/ --}}
-        {{-- For example only: https://www.onceuponachef.com/recipes/roasted-carrots-with-thyme.html --}}
-
-        <h2 class="text-center">Social Media</h2>
-        <link rel="stylesheet" type="text/css"
-            href="https://cdn.jsdelivr.net/gh/vaakash/socializer@f794acd/css/socializer.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
-
-        <div class="socializer" data-features="32px,circle,float,fluid,icon-white,pad"
-            data-meta-link="https://www.onceuponachef.com/recipes/roasted-carrots-with-thyme.html"
-            data-meta-title="Sample" data-sites="facebook,instagram,x,youtube,tiktok" data-text="in"></div>
-
-
-
-        <script src="https://cdn.jsdelivr.net/gh/vaakash/socializer@f794acd/js/socializer.min.js"></script>
-        <script>
-            (function(){
-    socializer( '.socializer' );
-}());
-        </script>
-    </section>
-
-
-
-    <section class="profile-contact">
-
-
-        {{-- Source: https://startbootstrap.com/snippets/bootstrap-5-contact-form --}}
-
-        <!-- Bootstrap 5 Contact Form Snippet -->
-
-        <div class="">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="card border-0 rounded-3">
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <div class="h1 fw-light">Contact Form</div>
-                                <p class="mb-4 text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                    Expedita velit excepturi quibusdam et illo maiores sequi libero at consequuntur
-                                    totam!</p>
-                            </div>
-
-
-
-                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-
-                                <!-- Name Input -->
-                                <div class="form-floating mb-3">
-                                    <input class="form-control" id="name" type="text" placeholder="Name"
-                                        data-sb-validations="required" />
-                                    <label for="name">Name</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.
-                                    </div>
-                                </div>
-
-                                <!-- Email Input -->
-                                <div class="form-floating mb-3">
-                                    <input class="form-control" id="emailAddress" type="email"
-                                        placeholder="Email Address" data-sb-validations="required,email" />
-                                    <label for="emailAddress">Email Address</label>
-                                    <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email Address
-                                        is required.</div>
-                                    <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email Address
-                                        Email is not valid.</div>
-                                </div>
-
-                                <!-- Message Input -->
-                                <div class="form-floating mb-3">
-                                    <textarea class="form-control" id="message" type="text" placeholder="Message"
-                                        style="height: 10rem;" data-sb-validations="required"></textarea>
-                                    <label for="message">Message</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">Message is
-                                        required.</div>
-                                </div>
-
-                                <!-- Submit success message -->
-                                <div class="d-none" id="submitSuccessMessage">
-                                    <div class="text-center mb-3">
-                                        <div class="fw-bolder">Form submission successful!</div>
-                                        <p>To activate this form, sign up at</p>
-                                        <a
-                                            href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                    </div>
-                                </div>
-
-                                <!-- Submit error message -->
-                                <div class="d-none" id="submitErrorMessage">
-                                    <div class="text-center text-danger mb-3">Error sending message!</div>
-                                </div>
-
-                                <!-- Submit button -->
-                                <div class="d-grid">
-                                    <button class="btn btn-primary btn-lg disabled" id="submitButton"
-                                        type="submit">Submit</button>
-                                </div>
-                            </form>
-                            <!-- End of contact form -->
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section>
+        <div class="container section-title" data-aos="fade-up" style="margin-bottom:5px;">
+        <div class="section-title-container d-flex align-items-center justify-content-between">
+            <input class="search-bar" style="margin:0px" type="text" placeholder=" searching for delicious recipes ... ">
+            <button class="search-btn"><i class="bi bi-search-heart-fill"></i>SEARCH</button>
         </div>
-
-        <!-- CDN Link to SB Forms Scripts -->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
+        <div class="container d-flex align-items-left filter">
+            <a href=""><i class="bi bi-sort-down-alt"></i></a>
+            <p>filter</p>
+        </div>
+    </div>
     </section>
+
+    <div class="col-lg-12">
+
+          <!-- Blog Posts Section -->
+          <section id="blog-posts" class="blog-posts section">
+
+            <div class="container">
+              <div class="row gy-4">
+
+                <div class="col-lg-4">
+                  <article class="position-relative h-100">
+
+                    <div class="post-img position-relative overflow-hidden">
+                      <img class="recipe-list-img" src="{{ asset('storage/images/media/recipe3.jpeg') }}" alt="">
+                    </div>
+
+                    <div class="post-content d-flex flex-column">
+
+                      <h3 class="post-title">Vegetarian Muffuletta</h3>
+                      <hr style="margin:0px 0px 15px 0px;">
+                      <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                           <i class="bi bi-person-square"></i><span class="ps-2">Luigi D'Agostino </span>
+                        </div>
+                        <span class="px-3 text-black-50">|</span>
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-clock-fill"></i> <span class="ps-2">January 11th, 2026</span>
+                        </div>
+                      </div>
+
+                      <p>
+                       What if the least important part of a traditional muffuletta sandwich is the meat? When I think about this classic sandwich...
+
+                      <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                           <i class="bi bi-tags-fill"></i><span class="ps-2">Tags: Vegetarian, Sandwiches, Italian...</span>
+                        </div>
+                      </div>
+                      <hr style="margin:15px 0px 15px 0px;">
+
+                      <a href="#" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+                    </div>
+
+                  </article>
+                </div><!-- End post list item -->
+
+                <div class="col-lg-4">
+                  <article class="position-relative h-100">
+
+                    <div class="post-img position-relative overflow-hidden">
+                      <img class="recipe-list-img" src="{{ asset('storage/images/media/recipe4.jpg') }}" alt="">
+                    </div>
+
+                    <div class="post-content d-flex flex-column">
+
+                      <h3 class="post-title">Charred Scallion Gremolata</h3>
+                      <hr style="margin:0px 0px 15px 0px;">
+                      <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                           <i class="bi bi-person-square"></i><span class="ps-2">Luigi D'Agostino </span>
+                        </div>
+                        <span class="px-3 text-black-50">|</span>
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-clock-fill"></i> <span class="ps-2">January 5th, 2026</span>
+                        </div>
+                      </div>
+
+                      <p>
+                       I love how gremolata can brighten any dish and, being obsessed with charring all things citrus, decided to make a gremolata from...
+                      <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                           <i class="bi bi-tags-fill"></i><span class="ps-2">Tags: Vegetarian, Low Effort, Gluten-Free...</span>
+                        </div>
+                      </div>
+                      <hr style="margin:15px 0px 15px 0px;">
+
+                      <a href="" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+                    </div>
+
+                  </article>
+                </div><!-- End post list item -->
+
+                <div class="col-lg-4">
+                  <article class="position-relative h-100">
+
+                    <div class="post-img position-relative overflow-hidden">
+                      <img class="recipe-list-img" src="{{ asset('storage/images/media/recipe5.jpg') }}" alt="">
+                    </div>
+
+                    <div class="post-content d-flex flex-column">
+
+                      <h3 class="post-title">Creamy Vegetable Corn Soup</h3>
+                      <hr style="margin:0px 0px 15px 0px;">
+                      <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                           <i class="bi bi-person-square"></i><span class="ps-2">Luigi D'Agostino </span>
+                        </div>
+                        <span class="px-3 text-black-50">|</span>
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-clock-fill"></i> <span class="ps-2">December 30th, 2025</span>
+                        </div>
+                      </div>
+
+                      <p>
+                       A hearty and comforting soup that's perfect for the winter season, made with a variety of vegetables, corn, and a hint of...
+
+                      <div class="meta d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                           <i class="bi bi-tags-fill"></i><span class="ps-2">Tags: Breakfast and Brunch, Sweet, Pastry...</span>
+                        </div>
+                      </div>
+                      <hr style="margin:15px 0px 15px 0px;">
+
+                      <a href="#" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+                    </div>
+
+                  </article>
+                </div><!-- End post list item -->
+
+
+
+              </div>
+            </div>
+
+          </section><!-- /Blog Posts Section -->
+
+          <!-- Blog Pagination Section -->
+          <section id="blog-pagination" class="mt-3 blog-pagination section">
+
+            <div class="container">
+              <div class="d-flex justify-content-center">
+                <ul>
+                  <li><a href="#"><i class="bi bi-caret-left-fill"></i></a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#" class="active">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#"><i class="bi bi-caret-right-fill"></i></a></li>
+                </ul>
+              </div>
+            </div>
+
+          </section><!-- /Blog Pagination Section -->
+
+        </div>
 
 
 </x-mylayouts.layout-prototype>

@@ -373,6 +373,9 @@ h6 {
     background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   }
 
+  .somt {
+    color: #93a79600;
+  }
   .navmenu a i:hover,
   .navmenu a:focus i:hover {
     background-color: var(--accent-color);
@@ -1798,7 +1801,7 @@ section,
 --------------------------------------------------------------*/
 .blog-pagination {
   padding-top: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  /* color: color-mix(in srgb, var(--default-color), transparent 40%); */
 }
 
 .blog-pagination ul {
@@ -1810,7 +1813,6 @@ section,
 
 .blog-pagination li {
   margin: 0 5px;
-  transition: 0.3s;
 }
 
 .blog-pagination li a {
@@ -1823,8 +1825,10 @@ section,
 
 .blog-pagination li a.active,
 .blog-pagination li a:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  background: #6B9C73;
+  color: black;
+  border: black solid 2px;
+  border-radius: 5px;
 }
 
 .blog-pagination li a.active a,
@@ -2113,7 +2117,6 @@ section,
 .blog-author-widget-2 p {
   font-style: italic;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
-  margin: 10px 0 0 0;
 }
 
 
@@ -2173,10 +2176,10 @@ section,
 
 .badge-bar {
     display: flex;
-    font-size: 15px;
-    padding-bottom: 10px;
     flex-wrap: nowrap;
     gap: 5px;
+    overflow: hidden;
+    margin-bottom: 5px;
 }
 
 .badge {
@@ -2191,6 +2194,7 @@ section,
     background: none;
     color: black;
     font-weight: bold;
+    min-width: 35px;
 }
 
 
@@ -2309,6 +2313,7 @@ section,
     max-width: 100%;
     object-fit: cover;
     object-position: center 10%;
+    border-radius: 5px;
 }
 
 .profile-picture-card {
@@ -2376,7 +2381,7 @@ section,
     text-align: justify;
     color: rgb(117, 116, 116);
     margin-bottom: 0px;
-    flex: 1;
+    height: 227px;
 }
 
 .profile .badge-bar {
@@ -2413,11 +2418,7 @@ section,
     cursor: pointer;
 }
 
-.profile-left {
-    display:flex;
-    flex-direction: column;
-    height:100%;
-}
+
 /*--------------------------------------------------------------
 # RECIPENEST-SPECIFIC STYLING - RECIPE LIST SECTION
 --------------------------------------------------------------*/
@@ -2426,4 +2427,34 @@ section,
   max-height:250px;
   width: 100%;
   object-fit: cover;
+}
+
+/*--------------------------------------------------------------
+# RECIPENEST-SPECIFIC STYLING - RECIPE SINGLE SECTION
+--------------------------------------------------------------*/
+.post-img {
+    border: black solid 3px;
+}
+
+.blog-author-name {
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+}
+
+.blog-author-widget p {
+  font-family: Poppins, Century Gothic, Arial, san-serif;
+  text-align: justify;
+  padding: 0px 10px;
+  font-style: normal;
+  margin-top: 0px;
+  padding:0px;
+}
+
+.content p {
+    font-size: 21px;
+}
+
+.content h2 {
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+    font-size: 25px;
+    font-weight: bold;
 }
