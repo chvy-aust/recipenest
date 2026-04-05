@@ -77,6 +77,7 @@ a:hover {
   text-decoration: none;
 }
 
+
 h1,
 h2,
 h3,
@@ -373,9 +374,6 @@ h6 {
     background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   }
 
-  .somt {
-    color: #93a79600;
-  }
   .navmenu a i:hover,
   .navmenu a:focus i:hover {
     background-color: var(--accent-color);
@@ -731,7 +729,7 @@ section,
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 0.5px;
-  border-bottom: 1.5px solid var(--default-color);
+  border-bottom: none;
   font-family: var(--nav-font);
   font-weight: 500;
   padding-bottom: 2px;
@@ -1709,9 +1707,9 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Blog Posts Section
+# Recipe List Section
 --------------------------------------------------------------*/
-.blog-posts article {
+.recipe-posts article {
   background-color: var(--surface-color);
   /* box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1); */
   transition: 0.3s;
@@ -1719,18 +1717,20 @@ section,
   border-radius: 5px;
 }
 
-.blog-posts article:hover {
+.recipe-posts article:hover {
     transform: translateY(-10px);
     box-shadow: #000000 3px 3px 0px;
-    cursor: pointer;
 }
 
 
-.blog-posts .post-img img {
+.recipe-posts .post-img img {
   transition: 0.5s;
+  max-height:300px;
+  width: 100%;
+  object-fit: cover;
 }
 
-.blog-posts .post-date {
+.recipe-posts .post-date {
   background-color: var(--accent-color);
   color: var(--contrast-color);
   position: absolute;
@@ -1742,57 +1742,65 @@ section,
   font-weight: 500;
 }
 
-.blog-posts .post-content {
+.recipe-posts .post-content {
   padding: 15px 30px;
 }
 
-.blog-posts .post-title {
+.recipe-posts .post-title {
   font-size: 20px;
   color: var(--heading-color);
   font-weight: 700;
   transition: 0.3s;
+  padding-bottom: 15px;
+  border-bottom: solid 1px color-mix(in srgb, var(--default-color), transparent 60%);
   margin-bottom: 15px;
 }
 
-.blog-posts .meta i {
+.recipe-posts .meta i {
   font-size: 16px;
   color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 
-.blog-posts .meta span {
+.recipe-posts .meta span {
   font-size: 15px;
   color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 
-.blog-posts p {
+.recipe-posts .tags {
+    padding-bottom: 15px;
+    border-bottom: solid 1px color-mix(in srgb, var(--default-color), transparent 60%);
+    margin-bottom: 15px;
+}
+
+.recipe-posts p {
   margin-top: 20px;
 }
 
-.blog-posts hr {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-}
 
-.blog-posts .readmore {
+.recipe-posts .readmore {
   display: flex;
-  align-items: center;
+  height: 30px;
+  font: bold 20px Poppins, Century Gothic, Arial, san-serif;
   font-weight: 600;
-  line-height: 1;
+  border-bottom: solid 3px color-mix(black, transparent 100%);
+  cursor: pointer;
+  line-height: 0.7;
   transition: 0.3s;
   color: color-mix(in srgb, var(--heading-color), transparent 20%);
 }
 
-.blog-posts .readmore i {
+.recipe-posts .readmore i {
   line-height: 0;
   margin-left: 6px;
   font-size: 16px;
 }
 
-.blog-posts article:hover .post-title,
-.blog-posts article:hover .readmore {
+.recipe-posts .readmore:hover {
+  border-bottom-color: color-mix(black, transparent 0%);
   color: var(--accent-color);
 }
 
-.blog-posts article:hover .post-img img {
+.recipe-posts article:hover .post-img img {
   transform: scale(1.1);
 }
 
@@ -1800,8 +1808,7 @@ section,
 # Blog Pagination Section
 --------------------------------------------------------------*/
 .blog-pagination {
-  padding-top: 0;
-  /* color: color-mix(in srgb, var(--default-color), transparent 40%); */
+  padding-top: 20px;
 }
 
 .blog-pagination ul {
@@ -1816,25 +1823,23 @@ section,
 }
 
 .blog-pagination li a {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
   padding: 7px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: color-mix(black, transparent 100%) solid 2px;
+  border-radius: 5px;
 }
 
 .blog-pagination li a.active,
 .blog-pagination li a:hover {
   background: #6B9C73;
   color: black;
-  border: black solid 2px;
-  border-radius: 5px;
+  border-color: color-mix(black, transparent 0%);
 }
 
-.blog-pagination li a.active a,
-.blog-pagination li a:hover a {
-  color: var(--contrast-color);
-}
+.blog-pagination li a:hover { background: #93b899; }
+
 
 /*--------------------------------------------------------------
 # Contact Section
@@ -2241,19 +2246,6 @@ section,
     overflow: hidden;
 }
 
-.read-more-btn {
-    height: 30px;
-    padding-top: 10px;
-    font-size: 20px;
-    font-family: Poppins, Century Gothic, Arial, san-serif;
-    font-weight: bold;
-    text-align: right;
-}
-
-.read-more-btn:hover {
-    text-decoration: underline;
-}
-
 .chef .chef-member .member-info hr {
     margin: 0px;
 }
@@ -2416,25 +2408,13 @@ section,
 }
 .breadcrumb-section .previous {
     cursor: pointer;
+    text-decoration: none;
 }
 
-
-/*--------------------------------------------------------------
-# RECIPENEST-SPECIFIC STYLING - RECIPE LIST SECTION
---------------------------------------------------------------*/
-
-.recipe-list-img {
-  max-height:250px;
-  width: 100%;
-  object-fit: cover;
-}
 
 /*--------------------------------------------------------------
 # RECIPENEST-SPECIFIC STYLING - RECIPE SINGLE SECTION
 --------------------------------------------------------------*/
-.post-img {
-    border: black solid 3px;
-}
 
 .blog-author-name {
     font-family: Poppins, Century Gothic, Arial, san-serif;
@@ -2457,4 +2437,24 @@ section,
     font-family: Poppins, Century Gothic, Arial, san-serif;
     font-size: 25px;
     font-weight: bold;
+}
+
+
+/* Remove underlines from all links - works in all browsers */
+a,
+a:link,
+a:visited,
+a:active,
+a:hover,
+a:focus,
+a:any-link,
+a:-moz-any-link,
+a:-webkit-any-link {
+  text-decoration: none !important;
+}
+
+/* Optional: Add underline only on hover */
+a:hover,
+a:focus {
+  text-decoration: underline !important;
 }

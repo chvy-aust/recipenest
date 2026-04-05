@@ -9,8 +9,7 @@ class RecipeController extends Controller
 {
     public function index()
     {
-        $recipe_data = Recipe::list()->get();
-
+        $recipe_data = Recipe::list()-> paginate(8);
         return view('pages.custom.users.recipe-list.index', compact('recipe_data'));
     }
 

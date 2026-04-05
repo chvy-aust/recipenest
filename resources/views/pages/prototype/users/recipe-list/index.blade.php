@@ -1,9 +1,5 @@
 <x-mylayouts.layout-prototype>
 
-
-
-
-
   <main class="main">
 
     <!-- Page Title -->

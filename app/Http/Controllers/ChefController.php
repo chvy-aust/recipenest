@@ -17,4 +17,6 @@ class ChefController extends Controller
         $data = User::list() -> author($id) -> first();
         return view('pages.custom.users.profile.show', compact('data'));
     }
+
+    
 }
