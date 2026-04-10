@@ -14,9 +14,8 @@ class ChefController extends Controller
     }
 
     public function show($id) {
-        $data = User::list() -> author($id) -> first();
-        return view('pages.custom.users.profile.show', compact('data'));
+        $chef = User::list() -> author($id) -> first();
+        return view('pages.custom.users.profile.show', compact('chef'));
     }
 
-    
 }

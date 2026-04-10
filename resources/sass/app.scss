@@ -1252,9 +1252,14 @@ section,
   overflow: hidden;
   width: 200px;
   height: 250px;
-  /* border-radius: 50%; */
   flex-shrink: 0;
   border: black solid 3px;
+}
+
+@media (max-width: 468px) {
+    .chef .chef-member .pic {
+        width: 250px;
+    }
 }
 
 .chef .chef-member .pic img {
@@ -1267,7 +1272,6 @@ section,
 .chef .chef-member:hover {
   transform: translateY(-10px);
   box-shadow: #000000 3px 3px 0px;
-  cursor: pointer;
 }
 
 .chef .chef-member .member-info {
@@ -1277,7 +1281,7 @@ section,
 
 @media (max-width: 468px) {
   .chef .chef-member .member-info {
-    padding: 30px 0 0 0;
+    padding: 10px 0 0 0;
     text-align: center;
     width: 100%;
   }
@@ -1289,24 +1293,7 @@ section,
   font-size: 20px;
 }
 
-.chef .chef-member span {
-  display: block;
-  font-size: 15px;
-  padding-bottom: 10px;
-  position: relative;
-  font-weight: 500;
-}
 
-.chef .chef-member span::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 85%);
-  bottom: 0;
-  left: 0;
-}
 
 @media (max-width: 468px) {
   .chef .chef-member span::after {
@@ -1314,10 +1301,30 @@ section,
   }
 }
 
-/* .chef .chef-member p {
-  margin: 10px 0 0 0;
-  font-size: 14px;
-} */
+.chef .chef-member .readmore {
+  display: flex;
+  height: 25px;
+  font: bold 20px Poppins, Century Gothic, Arial, san-serif !important;
+  font-weight: 600 !important;
+  border-bottom: solid 3px color-mix(black, transparent 100%);
+  cursor: pointer;
+  line-height: 0.7;
+  transition: 0.3s;
+  color: color-mix(in srgb, var(--heading-color), transparent 20%);
+  margin-top: 5px;
+}
+
+.chef .chef-member .readmore i {
+  line-height: 0;
+  margin-left: 6px;
+  font-size: 16px;
+  align-self: flex-end;
+}
+
+.chef .chef-member .readmore:hover {
+  border-bottom-color: color-mix(black, transparent 0%);
+  color: var(--accent-color);
+}
 
 .chef .chef-member .social {
   margin-top: 12px;
@@ -1745,6 +1752,8 @@ section,
   line-height: 0.7;
   transition: 0.3s;
   color: color-mix(in srgb, var(--heading-color), transparent 20%);
+  text-decoration:none !important;
+  border-bottom: none !important;
 }
 
 .recipe-posts .readmore i {
@@ -2116,9 +2125,8 @@ section,
 
 .search-btn {
     margin-left: 10px;
-    border: black solid 3px;
-    background-color: #6B9C73;
-    border-radius: 5px;
+    background-color: transparent;
+    border: none;
     height: 32px;
     font-weight: bold;
     font-size: 20px;
@@ -2143,6 +2151,12 @@ section,
     gap: 5px;
     overflow: hidden;
     margin-bottom: 5px;
+}
+
+@media (max-width: 468px) {
+    .badge-bar {
+        justify-content: center;
+    }
 }
 
 .badge {
@@ -2196,13 +2210,20 @@ section,
     background-color: #faf9f9;
     border: #e2e2e2 solid 1px;
     font-size: 15px;
-    height: 110px;
+    height: 125px;
     width: 100%;
     margin: 15px 0px;
     padding: 5px 8px;
     text-overflow: ellipsis;
     overflow: hidden;
 }
+
+@media (max-width: 468px) {
+    .chef .chef-member .member-info h4 {
+        padding-bottom: 10px;
+    }
+}
+
 
 .chef .chef-member .member-info hr {
     margin: 0px;
@@ -2258,14 +2279,74 @@ section,
 --------------------------------------------------------------*/
 
 .profile-picture {
-    border: black solid 3px;
-    max-height: 450px;
-    max-width: 100%;
+    border: white solid 3px;
+    height: 175px;
+    width: 175px;
     object-fit: cover;
     object-position: center 10%;
     border-radius: 5px;
+    position: absolute;
+    bottom:-100px;
+    left:20px;
+    z-index:2;
 }
 
+.profile-header {
+    margin-top:15px;
+    width: 100%;
+    height:225px;
+    object-fit: cover;
+    object-position: center 10%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.profile-nav {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.profile-sidebar h1, h2, h3, h4 {
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+    font-weight: 600;
+    color: rgba(29, 29, 29, 0.912);
+}
+
+.profile-nav .link {
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+    font-weight: 600;
+    cursor: pointer;
+    color: rgb(82, 82, 82);
+    transition: 0.3s ease-in-out;
+    text-transform: capitalize !important;
+    text-decoration: none !important;
+    padding-bottom: 13px;
+    border-bottom: rgba(215, 215, 215, 0) solid 3px;
+}
+
+.profile-nav .link:hover, .profile-nav .link.active-tab {
+    color:black;
+    border-bottom-color: black;
+}
+
+.profile-nav .link:active {
+    color:black;
+    border-bottom-color: green;
+}
+
+
+.profile-nav .link i {
+    margin-right:3px;
+}
+
+.profile-nav .separator {
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+    font-weight: 600;
+    color: grey;
+    padding-bottom: 14px;
+}
 .profile-picture-card {
     background-color: #6B9C73;
     border: black solid 2px;
@@ -2324,12 +2405,10 @@ section,
 }
 
 .profile-bio {
-    border: grey solid 1px;
+    border: rgb(215, 215, 215) solid 1px;
     padding: 5px 15px;
-    font-size: 20px;
-    background-color: #f3f2f2;
+    background-color: #ffffff;
     text-align: justify;
-    color: rgb(117, 116, 116);
     margin-bottom: 0px;
     height: 227px;
 }

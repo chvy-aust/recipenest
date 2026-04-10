@@ -1,4 +1,4 @@
-<x-mylayouts.layout-custom>
+<x-mylayouts.layout-prototype>
 
   <main class="main">
 

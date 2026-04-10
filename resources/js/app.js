@@ -1,4 +1,5 @@
 import './bootstrap';
+import '@fortawesome/fontawesome-free/css/all.css'
 import AOS from 'aos';
 import Swiper from 'swiper';
 

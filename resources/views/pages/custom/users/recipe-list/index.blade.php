@@ -20,13 +20,12 @@
             <a href=""><i class="bi bi-sort-down-alt"></i></a>
             <p>filter</p>
         </div>
-    </div><!-- End Page Title -->
+    </div>
+    <!-- End Page Title -->
 
     <div class="container">
       <div class="row">
-
         <div class="col-lg-12">
-          <!-- Blog Posts Section -->
           <section id="recipe-posts" class="recipe-posts section">
             <div class="container">
 
@@ -35,42 +34,40 @@
                 <div class="col-lg-6">
                   <article class="position-relative h-100">
                     <div class="post-img position-relative overflow-hidden">
-                      <img class="recipe-list-img" src="{{ $recipe->getImage() }}" alt="">
+                      <img src="{{ $recipe->getImage() }}" alt="">
                     </div>
 
                     <div class="post-content d-flex flex-column">
-                      <h3 class="post-title">{{ $recipe->title }}</h3>
-                      <div class="meta d-flex align-items-center">
-                        <div class="d-flex align-items-center">
-                           <i class="bi bi-person-square"></i><span class="ps-2">{{ $recipe->user->name }}</span>
+                        <h3 class="post-title">{{ $recipe->title }}</h3>
+                        <div class="meta d-flex align-items-center">
+                            <div class="d-flex align-items-center">
+                            <i class="bi bi-person-square"></i><span class="ps-2">{{ $recipe->user->name }}</span>
+                            </div>
+                            <span class="px-3 text-black-50">|</span>
+                            <div class="d-flex align-items-center">
+                            <i class="bi bi-clock-fill"></i> <span class="ps-2">{{ $recipe->created_at }}</span>
+                            </div>
                         </div>
-                        <span class="px-3 text-black-50">|</span>
-                        <div class="d-flex align-items-center">
-                          <i class="bi bi-clock-fill"></i> <span class="ps-2">{{ $recipe->created_at }}</span>
+
+                        <p>{{ $recipe->short_description }}</p>
+
+                        <div class="meta tags d-flex align-items-center">
+                            <div class="d-flex align-items-center">
+                            <i class="bi bi-tags-fill"></i><span class="ps-2">Tags: Breakfast and Brunch, Sweet, Pastry...</span>
+                            </div>
                         </div>
-                      </div>
 
-                      <p>{{ $recipe->short_description }}</p>
-
-                      <div class="meta tags d-flex align-items-center">
-                        <div class="d-flex align-items-center">
-                           <i class="bi bi-tags-fill"></i><span class="ps-2">Tags: Breakfast and Brunch, Sweet, Pastry...</span>
-                        </div>
-                      </div>
-
-                      <a href="{{ $recipe->getLink() }}" class="readmore" style="text-decoration:none !important; border-bottom: none !important;"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                        <a href="{{ $recipe->getLink() }}" class="readmore"><span>Read More</span><i class="bi bi-arrow-right-circle-fill"></i></a>
                     </div>
                   </article>
-                </div><!-- End post list item -->
+                </div>
                 @endforeach
               </div>
 
             </div>
-          </section><!-- /Blog Posts Section -->
+          </section>
 
-          <!-- Blog Pagination Section -->
           <section id="blog-pagination" class="blog-pagination section">
-
             <div class="container">
               <div class="d-flex justify-content-center">
                 <ul>
@@ -84,12 +81,8 @@
                 </ul>
               </div>
             </div>
-
-          </section><!-- /Blog Pagination Section -->
-
+          </section>
         </div>
-
-
 
       </div>
     </div>

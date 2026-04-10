@@ -21,7 +21,7 @@
 
 
     <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="#" class="logo"><h1 class="sitename" style="text-decoration: none;">RECIPEnest</h1></a>
+        <a href="#" class="logo"><h1 class="sitename" style="text-decoration: none;">RECIPEnest<i>!</i></h1></a>
       <nav id="navmenu" class="navmenu">
         <ul>
             <li><a href="{{ route('recipes.index') }}">Recipes</a></li>
@@ -29,7 +29,7 @@
 
             @guest
             <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a class="register-btn" href="{{ route('register') }}" >Sign In</a></li>
+            <li><a class="register-btn" href="{{ route('register') }}" >Sign Up</a></li>
             @endguest
 
             @auth
