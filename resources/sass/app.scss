@@ -1678,8 +1678,9 @@ section,
   background-color: var(--surface-color);
   /* box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1); */
   transition: 0.3s;
-  border: black solid 3px;
+  border: black solid 2px;
   border-radius: 5px;
+  padding: 15px 30px;
 }
 
 .recipe-posts article:hover {
@@ -1687,29 +1688,29 @@ section,
     box-shadow: #000000 3px 3px 0px;
 }
 
+.recipe-profile-picture {
+    height: 44px;
+    width: 44px;
+    object-fit: cover;
+    object-position: center 10%;
+   
+}
 
 .recipe-posts .post-img img {
   transition: 0.5s;
   max-height:300px;
   width: 100%;
   object-fit: cover;
+  margin-bottom:15px;
+   border: black solid 2px;
 }
 
 .recipe-posts .post-date {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  text-transform: uppercase;
-  font-size: 13px;
-  padding: 6px 12px;
-  font-weight: 500;
+  font: 15px Poppins, Century Gothic, Arial, san-serif;
+  color: #767676;
+    font-weight: lighter;
 }
 
-.recipe-posts .post-content {
-  padding: 15px 30px;
-}
 
 .recipe-posts .post-title {
   font-size: 20px;
@@ -1719,6 +1720,15 @@ section,
   padding-bottom: 15px;
   border-bottom: solid 1px color-mix(in srgb, var(--default-color), transparent 60%);
   margin-bottom: 15px;
+}
+
+.recipe-posts .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;  
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Fallback, though -webkit-line-clamp handles it */
 }
 
 .recipe-posts .meta i {
@@ -1737,10 +1747,14 @@ section,
     margin-bottom: 15px;
 }
 
-.recipe-posts p {
-  margin-top: 20px;
+.recipe-posts .tags span {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;  
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-
 
 .recipe-posts .readmore {
   display: flex;
@@ -1767,9 +1781,19 @@ section,
   color: var(--accent-color);
 }
 
-.recipe-posts article:hover .post-img img {
-  transform: scale(1.1);
+.recipe-posts .chef-link {
+    font: bold 17px Poppins, Century Gothic, Arial, san-serif;
 }
+
+.chef-icon {
+    font: bold 19px Poppins, Century Gothic, Arial, san-serif;
+    color: black;
+}
+
+.recipe-posts .chef-link:hover {
+    text-decoration: underline;
+}
+
 
 /*--------------------------------------------------------------
 # Blog Pagination Section
@@ -2096,6 +2120,20 @@ section,
 # RECIPENEST-SPECIFIC STYLING
 --------------------------------------------------------------*/
 
+.badge-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 468px) {
+    .badge-bar {
+        justify-content: center;
+    }
+}
+
 .sitename {
     -webkit-text-stroke: 2px #000000;
     text-shadow: #000000 3px 3px 0px;
@@ -2145,25 +2183,14 @@ section,
     border: black solid 3px;
 }
 
-.badge-bar {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 5px;
-    overflow: hidden;
-    margin-bottom: 5px;
-}
 
-@media (max-width: 468px) {
-    .badge-bar {
-        justify-content: center;
-    }
-}
 
 .badge {
     border-radius: 5px;
     border: #000 solid 2px;
     color: black;
-    padding: 5px !important;
+    padding: 5px 8px 5px 8px !important;
+
 }
 
 .more-btn {
@@ -2230,37 +2257,10 @@ section,
 }
 
 
-
-.view-portfolio-button {
-    height: 30px;
-    align-self: flex-end;
-    width: fit-content;
-    border: black solid 2px;
-    padding: none;
-    background: none;
-    font-family: Poppins, Century Gothic, Arial, san-serif;
-    font-weight: bold;
-}
-
 .account-icon i {
     font-size: 40px;
     color: black;
     cursor: pointer;
-}
-
-.portfolio-link {
-    font-weight: bold;
-    font-size: 20px;
-    padding: 2px 8px;
-}
-
-
-.portfolio-tag {
-  margin-top: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  width: 100%;
 }
 
 .top-bar {
@@ -2279,16 +2279,38 @@ section,
 --------------------------------------------------------------*/
 
 .profile-picture {
-    border: white solid 3px;
+    border: black solid 2px;
     height: 175px;
     width: 175px;
     object-fit: cover;
     object-position: center 10%;
     border-radius: 5px;
     position: absolute;
+    bottom:-90px;
+    left:35px;
+    z-index:4;
+}
+
+.profile-picture-bg {
+    height: 200px;
+    width: 205px;
+    background-color: white;
+    border: black solid 2px;
+    position: absolute;
+    z-index:2;
     bottom:-100px;
     left:20px;
-    z-index:2;
+}
+
+.profile-picture-under {
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    z-index:3;
+    bottom:-100px;
+    border-left: black solid 2px;
+    border-right: black solid 2px;
 }
 
 .profile-header {
@@ -2297,56 +2319,76 @@ section,
     height:225px;
     object-fit: cover;
     object-position: center 10%;
-    border-radius: 5px 5px 0px 0px;
+    border: black solid 2px;
 }
 
 .profile-nav {
     display: flex;
     gap: 10px;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: right;
     padding-top: 10px;
 }
 
-.profile-sidebar h1, h2, h3, h4 {
-    font-family: Poppins, Century Gothic, Arial, san-serif;
-    font-weight: 600;
-    color: rgba(29, 29, 29, 0.912);
+.profile-container {
+    margin-top: 100px;
+    padding:5px 20px 20px 20px;
+    height: 350px;
+    border: black solid 2px;
+    border-top: none;
+    background-color: white;
 }
 
-.profile-nav .link {
+.profile-container h1, h2, h3 {
+    font-size: 35px;
+    font-weight: bold;
     font-family: Poppins, Century Gothic, Arial, san-serif;
+    font-weight: 600;
+    margin-bottom: 0px;
+
+}
+
+.profile-container h4, h5, h6 {
+    color: #676666;
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+    font-weight: lighter;
+}
+
+.profile-nav .follow-btn {
+    font: 20px Poppins, Century Gothic, Arial, san-serif;
     font-weight: 600;
     cursor: pointer;
-    color: rgb(82, 82, 82);
     transition: 0.3s ease-in-out;
-    text-transform: capitalize !important;
     text-decoration: none !important;
-    padding-bottom: 13px;
-    border-bottom: rgba(215, 215, 215, 0) solid 3px;
+    text-transform: lowercase;
+    margin-right: 20px;
+    border: none;
+    background: white;
+    border: rgba(0, 0, 0, 0) solid 2px;
+    
 }
 
-.profile-nav .link:hover, .profile-nav .link.active-tab {
-    color:black;
-    border-bottom-color: black;
+.profile-nav .follow-btn:hover {
+    background-color: #6B9C73;
+    border-color: black;
 }
 
-.profile-nav .link:active {
-    color:black;
-    border-bottom-color: green;
-}
+.profile-nav .follow-btn:active { border-radius: 10px; }
 
-
-.profile-nav .link i {
+.profile-nav .follow-btn i {
     margin-right:3px;
 }
 
-.profile-nav .separator {
-    font-family: Poppins, Century Gothic, Arial, san-serif;
-    font-weight: 600;
-    color: grey;
-    padding-bottom: 14px;
+.chef-profile .badge-bar .badge {
+    font: 12px Poppins, Century Gothic, Arial, san-serif;
+    border: black solid 2px;
 }
+
+.chef-profile .badge-bar .more-btn {
+    font: 18px Poppins, Century Gothic, Arial, san-serif;
+    font-weight: 600;
+}
+
 .profile-picture-card {
     background-color: #6B9C73;
     border: black solid 2px;
@@ -2360,14 +2402,6 @@ section,
     border: black solid 3px;
     display: flex;
     align-items: center;
-}
-
-.profile-name h2 {
-    font-size: 25px;
-    font-weight: bold;
-    font-family: Poppins, Century Gothic, Arial, san-serif;
-    text-align: center;
-    flex-grow: 1;
 }
 
 .profile-name i {
@@ -2405,38 +2439,34 @@ section,
 }
 
 .profile-bio {
-    border: rgb(215, 215, 215) solid 1px;
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+    border: #a6a6a6 solid 1px;
     padding: 5px 15px;
-    background-color: #ffffff;
+    background-color: #f1f1f1;
     text-align: justify;
     margin-bottom: 0px;
-    height: 227px;
+    height: 150px;
+    overflow: scroll;
 }
 
-.profile .badge-bar {
-    font-size: 25px;
+.profile-join-date {
+    font: 15px Poppins, Century Gothic, Arial, san-serif;
+    color: #767676;
+    font-weight: lighter;
 }
 
-.view-portfolio-btn {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.view-portfolio-btn:hover {
-    border-bottom: black solid 2px;
-    cursor: pointer;
-}
-
-.view-portfolio-btn h2 {
-    font-size: 20px;
-    font-weight: bold;
-    font-family: Poppins, Century Gothic, Arial, san-serif;
-    padding-top:5px;
-}
-
-.view-portfolio-btn i {
-    font-size: 25px;
+.chef-profile .social-links button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  color: black;
+  transition: 0.2s;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  background: white;
 }
 
 .breadcrumb-section {
@@ -2446,6 +2476,46 @@ section,
 .breadcrumb-section .previous {
     cursor: pointer;
     text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+# RECIPENEST-SPECIFIC STYLING - PORTFOLIO SECTION
+--------------------------------------------------------------*/
+
+.portfolio-header {
+    text-align: center;
+    font: 16px Poppins, Century Gothic, Arial, san-serif;
+    background-color:  #6B9C73;
+    border: black solid 2px;
+    font-weight: 300;
+    padding: 5px 0px;
+}
+
+.portfolio-footer {
+    text-align: center;
+    font: 15px Poppins, Century Gothic, Arial, san-serif;
+    font-style: italic;
+}
+
+@media (max-width:991px) {
+    .portfolio-header {
+    padding:15px;
+    border-top: black dashed 1px;
+}
+}
+
+.portfolio-container {
+    margin-top: 15px;
+    overflow-y:auto; 
+    max-height:650px;
+}
+
+.portfolio-container .recipe-card+.recipe-card {
+    margin-top:25px;
+}
+
+.portfolio-container .recipe-posts+.recipe-posts::before {
+    padding-top:15px;
 }
 
 
@@ -2476,23 +2546,4 @@ section,
     font-weight: bold;
 }
 
-
-/* Remove underlines from all links - works in all browsers */
-a,
-a:link,
-a:visited,
-a:active,
-a:hover,
-a:focus,
-a:any-link,
-a:-moz-any-link,
-a:-webkit-any-link {
-  text-decoration: none !important;
-}
-
-/* Optional: Add underline only on hover */
-a:hover,
-a:focus {
-  text-decoration: underline !important;
-}
 

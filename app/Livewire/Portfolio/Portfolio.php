@@ -51,7 +51,7 @@ class Portfolio extends Component
     public function render()
     {
         $recipe_data = $this->chef->recipes()->filter($this->values)->where('published', true)->paginate(3);
-        return view('pages/prototype/users/portfolio/portfolio', [
+        return view('pages/custom/users/portfolio/portfolio', [
             'recipe_data' => $recipe_data,
         ]);
     }
