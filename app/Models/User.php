@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -62,6 +63,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(Recipe::class);
     }
+
+    /**
+     * Get all of the badges for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function badges(): BelongsToMany
+    {
+        return $this->belongsToMany(Badge::class)
+                    ->withPivot('active')
+                    ->withTimestamps();
+    }
+
 
 
     // =============== SCOPES ===============

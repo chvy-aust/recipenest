@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             AppSeeder::class,
             RecipeSeeder::class,
+            BadgeSeeder::class,
         ]);
     }
 }

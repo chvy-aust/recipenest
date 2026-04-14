@@ -38,10 +38,10 @@
                         <h6>{{ $chef->short_description }}</h6>
                         <div class="badge-bar">
                                 <span class="badge red">italian connoisseur</span>
-                                <span class="badge green">vegetarian 🥦</span>
-                                <span class="badge yellow">sweet tooth</span>
+                                <span class="badge green">🥦 vegetarian</span>
+                                <span class="badge yellow">🍭 sweet tooth</span>
                                 <span class="badge green">cake! cake! cake!</span>
-                                <span class="badge red">hot headed</span>
+                                <span class="badge red">🌶️ hot headed</span>
                                 <button class="more-btn"></button>
                         </div>
                         <hr style="margin:5px 0px;">
