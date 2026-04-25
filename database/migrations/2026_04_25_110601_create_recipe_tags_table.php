@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('badge_user', function (Blueprint $table) {
+        Schema::create('recipe_tag', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('badge_id')->constrained()->onDelete('cascade');
-            $table->boolean('active')->default(true);
-            $table->timestamps();
+            $table->foreignId('recipe_id')->constrained()->onDelete('cascade');
+            $table->foreignId('tag_id')->constrained()->onDelete('cascade');
+            $table->unique(['recipe_id', 'tag_id']);
         });
     }
 
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('badge_user');
+        Schema::dropIfExists('recipe_tag');
     }
 };

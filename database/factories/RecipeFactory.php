@@ -5,6 +5,8 @@ namespace Database\Factories;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Recipe;
+use App\Models\Tag;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Writing>
@@ -36,6 +38,23 @@ class RecipeFactory extends Factory
         ];
     }
 
+        /**
+     * Establish recipe (tag) relationships after instantiation
+     */
+    public function configure(): static
+    {
+        return $this->afterCreating(function (Recipe $recipe) {
+        // Prevent crashing if badges do not exist
+        if (Tag::count() > 0) {
+            // Randomly return the ids of 2-6 badges
+            $tagIds = Tag::inRandomOrder()->take(fake()->numberBetween(2,6))->pluck('id');
+            // For each badge id, create a new active user-badge relationship
+            $recipe->tags()->attach($tagIds);
+        }
+
+        });
+
+    }
 
     public function randomImage()
     {

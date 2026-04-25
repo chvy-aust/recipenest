@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use App\Models\Review;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Recipe extends Model
@@ -27,7 +27,25 @@ class Recipe extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    /**
+     * Get all of the tags for a recipe.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tags(): BelongsToMany
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 
+    /**
+     * Get all of the comments for a recipe.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
 
 
     // =============== SCOPES ===============

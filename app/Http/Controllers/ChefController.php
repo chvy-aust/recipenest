@@ -19,10 +19,4 @@ class ChefController extends Controller
         return view('pages.custom.users.profile.show', compact('chef', 'featured_data'));
     }
 
-    public function showPortfolio(string $id){
-        $chef = User::list()->author($id)->first();
-        $featured_data = $chef->recipes()->where('featured', 1)->get();
-        return view('pages.custom.users.portfolio.main', compact('chef', 'featured_data'));
-    }
-
 }

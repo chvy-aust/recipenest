@@ -1,48 +1,34 @@
 <x-mylayouts.layout-prototype>
-
-  <main class="main">
-
-
+    <section>
     <div class="container">
-      <div class="row">
-        <!-- Page Title -->
-    <div class="container section-title" data-aos="fade-up" style="margin-top:10px; padding-left:23px;">
         <div class="section-title-container d-flex align-items-center justify-content-between">
-          <div class="breadcrumb-section">
-            <a href="#" class="previous">home /</a>
-            <a href="#" class="previous">recipes /</a>
-            <a href="#" class="previous">{{ $recipe->title }}</a>
-          </div>
-        </div>
-    </div><!-- End Page Title -->
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-secondary">home</a></li>
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-secondary">recipes</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ $recipe->title }}</li>
+                    </ol>
+                </nav>
+            </div>
 
+      <div class="row gx-5">
         <div class="col-lg-8">
-
-          <!-- Blog Details Section -->
-          <section id="blog-details" class="blog-details section">
-            <div class="container">
-
-              <article class="article">
-
-                <div class="post-img">
-                  <img src="{{ $recipe->getImage() }}" alt="" class="img-fluid h-250">
-                </div>
+          <section id="" class="recipe-details section">
+              <article class="container">
+                <img src="{{ $recipe->getImage() }}" alt="" class="img-fluid post-img">
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2 class="title" style="margin-top:5px; margin-bottom:5px;">{{ $recipe->title }}</h2>
-                    <i class="bi bi-share-fill" style="font-size:20px;"></i>
+                    <h2 class="title">{{ $recipe->title }}</h2>
+                    <button><i class="bi bi-share-fill" style="font-size:20px;"></i></button>
                 </div>
 
 
                 <hr style="margin:10px 0px 15px 0px;">
-                      <div class="meta d-flex align-items-center">
-                        <div class="d-flex align-items-center">
-                           <i class="bi bi-person-square" style="color:grey;"></i><span class="ps-2" style="color:grey;">Jia Xifeng</span>
-                        </div>
-                        <span class="px-3 text-black-50" style="color:grey;">|</span>
-                        <div class="d-flex align-items-center">
-                          <i class="bi bi-clock-fill" style="color:grey;"></i> <span class="ps-2" style="color:grey;">{{ $recipe->created_at }}</span>
-                        </div>
+                      <div class="meta-top">
+                        <p class="post-author-details">
+                            Posted by <a href="{{ $recipe->user->getLink() }}">{{ $recipe->user->name }}</a> on {{ $recipe->created_at->toFormattedDateString() }}</p>
                         <span class="px-3 text-black-50" style="color:grey;">|</span>
                         <div class="d-flex align-items-center">
                           <i class="bi bi-chat-dots-fill" style="color:grey;"></i> <span class="ps-2" style="color:grey;">12</span>
@@ -84,15 +70,13 @@
                            <i class="bi bi-tags-fill"></i><span class="ps-2" style="color:grey;">Tags: Japanese, Vegetarian, Beginner Friendly, Soup</span>
                         </div>
                       </div>
-                </div><!-- End meta bottom -->
+                </div>
 
               </article>
-
-            </div>
-          </section><!-- /Blog Details Section -->
+          </section>
 
           <!-- Blog Comments Section -->
-          <section id="blog-comments" class="blog-comments section">
+          <section id="recipe-comments" class="recipe-comments section">
 
             <div class="container">
 
@@ -234,7 +218,7 @@
           <div class="widgets-container" style="margin-top:17px;">
 
             <!-- Blog Author Widget -->
-            <div class="blog-author-widget widget-item" style="border:black solid 3px;">
+            <div class="recipe-author-widget widget-item" style="border:black solid 3px;">
 
               <div class="d-flex flex-column">
                 <div class="d-flex align-items-center">
@@ -248,7 +232,7 @@
                         <span class="badge green">verified</span>
                         <button class="more-btn"></button>
                     </div>
-                    <h4 class="blog-author-name">Jia Xifeng</h4>
+                    <h4 class="recipe-author-name">Jia Xifeng</h4>
                   </div>
                 </div>
 
@@ -271,17 +255,6 @@
 
             </div><!--/Blog Author Widget -->
 
-            {{-- <!-- Search Widget -->
-            <div class="search-widget widget-item">
-
-              <h3 class="widget-title">Search</h3>
-              <form action="">
-                <input type="text">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-              </form>
-
-            </div><!--/Search Widget --> --}}
-
             <!-- Recent Posts Widget -->
             <div class="recent-posts-widget widget-item" style="border:black solid 3px;">
 
@@ -292,7 +265,7 @@
               <div class="post-item">
                 <img src="{{ asset('storage/images/media/recipe7.jpg') }}" alt="" class="flex-shrink-0 rounded">
                 <div>
-                  <h4><a href="blog-details.html">Constellation Cauliflower Soup</a></h4>
+                  <h4><a href="recipe-details.html">Constellation Cauliflower Soup</a></h4>
                   <div class="meta-bottom">
                   <div class="meta d-flex align-items-center">
                         <div class="d-flex align-items-center">
@@ -392,7 +365,5 @@
 
       </div>
     </div>
-
-  </main>
-
+</section>
 </x-mylayouts.layout-prototype>

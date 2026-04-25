@@ -1,13 +1,6 @@
 <x-mylayouts.layout-prototype>
-
-
-
-
-
   <main class="main">
-
-    <!-- Page Title -->
-    <div class="container section-title" data-aos="fade-up" style="margin-top:10px;">
+    <div class="container section-title" data-aos="fade-up">
         <div class="section-title-container d-flex align-items-center justify-content-between">
           <div class="breadcrumb-section font-monospace">
             <a href="#" class="previous text-muted">home /</a>
@@ -21,7 +14,7 @@
             <p>filter</p>
         </div>
     </div>
-    <!-- End Page Title -->
+
 
     <div class="container">
       <div class="row">

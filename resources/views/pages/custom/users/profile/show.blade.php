@@ -1,14 +1,14 @@
 <x-mylayouts.layout-prototype>
-
-
     <section class="chef-profile">
         <div class="container">
             <div class="section-title-container d-flex align-items-center justify-content-between">
-                <div class="breadcrumb-section font-monospace">
-                    <a href="#" class="previous text-muted">home /</a>
-                    <a href="#" class="previous text-muted">chefs /</a>
-                    <a href="#" class="previous" style="font-weight:bold;">{{ $chef->name }}</a>
-                </div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">home</a></li>
+                        <li class="breadcrumb-item"><a href="#">chefs</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ $chef->name }}</li>
+                    </ol>
+                </nav>
             </div>
 
             <div class="row gx-5">
@@ -16,7 +16,7 @@
                 <div class="col-12 col-lg-6 mb-3">
                     <div style="position:relative;">
                         <img class="profile-header" loading="lazy"
-                            src="{{ asset('storage/images/profiles/luigi-agostino-chef-header.jpg') }}"
+                            src="{{ $chef->getHeader() }}"
                             alt="Chef Profile Header">
                         <img class="profile-picture rounded-circle" loading="lazy"
                                 src="{{ $chef->getImage() }}"
@@ -37,11 +37,9 @@
                         <h1>{{ $chef->name }}</h1>
                         <h6>{{ $chef->short_description }}</h6>
                         <div class="badge-bar">
-                                <span class="badge red">italian connoisseur</span>
-                                <span class="badge green">🥦 vegetarian</span>
-                                <span class="badge yellow">🍭 sweet tooth</span>
-                                <span class="badge green">cake! cake! cake!</span>
-                                <span class="badge red">🌶️ hot headed</span>
+                                @foreach ( $chef->badges as $badge )
+                                    <span class="badge {{ $badge->color }}">{{ $badge->icon }} {{ $badge->name }}</span>
+                                @endforeach
                                 <button class="more-btn"></button>
                         </div>
                         <hr style="margin:5px 0px;">
@@ -53,11 +51,22 @@
                                 Joined {{ $chef->created_at->toFormattedDateString() }}
                             </p>
                             <div class="social-links d-flex gap-1">
-                                <button><i class="bi bi-twitter-x"></i></button>
-                                <button><i class="bi bi-tiktok"> </i></button>
-                                <button><i class="bi bi-facebook"> </i></a>
-                                <button><i class="bi bi-instagram"> </i></a>
-                                <button><i class="bi bi-youtube"> </i></button>
+                                @if ($chef->twitter)
+                                    <button><i class="bi bi-twitter-x"></i></button>
+                                @endif
+                                @if ($chef->tiktok)
+                                    <button><i class="bi bi-tiktok"> </i></button>
+                                @endif
+                                @if ($chef->facebook)
+                                    <button><i class="bi bi-facebook"> </i></a>
+                                @endif
+                                @if ($chef->instagram)
+                                    <button><i class="bi bi-instagram"> </i></a>
+                                @endif
+                                @if ($chef->youtube)
+                                    <button><i class="bi bi-youtube"> </i></button>
+                                @endif
+
                             </div>
                         </div>
                     </div>
@@ -83,7 +92,7 @@
                                                 <a href="{{ $chef->getLink() }}" class="ps-2 chef-link">{{ $recipe->user->name }}</a>
                                             </div>
                                             <div class="d-flex align-items-center">
-                                            <span class="post-date">Posted {{ $recipe->created_at->format('M jS Y g:iA') }}</span>
+                                            <span class="post-date">{{ $recipe->created_at->format('M jS Y') }}</span>
                                             </div>
                                         </div>
                                     <div class="post-img position-relative overflow-hidden">
@@ -92,11 +101,11 @@
 
                                     <div class="post-content d-flex flex-column">
                                         <h3 class="post-title">{{ $recipe->title }}</h3>
-                                        
+
                                         <div class="description" style="">
                                             <p>{{ $recipe->full_description }}</p>
                                         </div>
-                                        
+
                                         <div class="meta tags d-flex align-items-center">
                                             <div class="d-flex align-items-center">
                                             <i class="bi bi-tags-fill"></i><span> Tags: Breakfast and Brunch, Sweet, Pastry</span>
@@ -117,12 +126,12 @@
                                         <p class="mb-0 mt-2">End of Portfolio</p>
                                     </div>
                                 @endif
-                                
+
                             </div>
                         </div>
                     </section>
                     </div>
-                    
+
                 </div>
 
             </div>

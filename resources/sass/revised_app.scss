@@ -1,0 +1,81 @@
+// RECIPE NEST COLOUR PALETTE
+$blue: #6A89B4;
+$indigo: #8f4ef7;
+$purple: #975ac2;
+$pink: #ae5b85;
+$red: #e75e6c;
+$orange: #e79e63;
+$yellow: #f0cd64;
+$green: #6b9c73;
+$teal: #87BBA2;
+$cyan: #3fc0da;
+$grey: #767676;
+$primary: $green; /* primary brand color used for emphasis, buttons, active/hover states, etc */
+$secondary: $grey; /* muted color element used for subtext, breadcrumbs, meta-tags, etc*/
+
+// FONTS
+$font-family-base: "EB Garamond",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: 'Nunito', sans-serif;
+$headings-font-family: Poppins, Century Gothic, Arial, san-serif;
+$nav-link-font-family: "Inter",  sans-serif;
+$link-color: #000000;
+$link-hover-color: #000000;
+$link-hover-decoration: none;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+
+// DEFAULT COLOR SCHEME (LIGHT)
+$body-bg: #FBF7F2; 
+$body-color: #000000;
+$body-secondary-bg: #ffffff;
+$body-secondary-color: #000000;
+
+
+@import url('https://fonts.bunny.net/css?family=Nunito');
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import 'aos/dist/aos.css';
+@import 'swiper/swiper-bundle.css';
+
+/*--------------------------------------------------------------
+# APPLICATION HEADER
+--------------------------------------------------------------*/
+
+.header {
+  color: var(--bs-body-color);
+  border: #000000 solid 3px;
+  background-color: var(--bs-primary);
+  padding: 10px 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+.header .logo {
+  line-height: 1;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+.header .logo h1 {
+  font-size: 40px;
+  margin: 0px;
+  font-weight: 900;
+  font-display: swap;
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+  .header .logo {
+    order: 1;
+  }
+
+  .header .navmenu {
+    order: 2;
+  }
+}

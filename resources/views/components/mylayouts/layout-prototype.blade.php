@@ -21,7 +21,7 @@
 
 
     <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="#" class="logo"><h1 class="sitename" style="text-decoration: none;">RECIPEnest<i>!</i></h1></a>
+        <a href="#" class="logo"><h1 class="sitename">RECIPEnest<i>!</i></h1></a>
       <nav id="navmenu" class="navmenu">
         <ul>
             <li><a href="{{ route('recipes.index') }}">Recipes</a></li>

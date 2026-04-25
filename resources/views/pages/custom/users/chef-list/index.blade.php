@@ -30,8 +30,10 @@
                         <div class="pic"><img src="{{ $data->getImage() }}" class="img-fluid" alt=""></div>
                         <div class="member-info">
                             <div class="badge-bar">
-                                <span class="badge red">italian connoisseur</span>
-                                <span class="badge green">vegetarian 🥦</span>
+                                @foreach ( $data->badges as $badge )
+                                    <span class="badge {{ $badge->color }}">{{ $badge->icon }} {{ $badge->name }}</span>
+                                @endforeach
+                                <button class="more-btn"></button>
                                 <button class="more-btn"></button>
                             </div>
                             <h4>{{ $data->name }}</h4>
