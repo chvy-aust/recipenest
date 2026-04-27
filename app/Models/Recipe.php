@@ -117,4 +117,5 @@ class Recipe extends Model
     {
         return asset('storage' . $this->image_path . $this->image_name);
     }
+
 }

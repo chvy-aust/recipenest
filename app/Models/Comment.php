@@ -13,7 +13,7 @@ class Comment extends Model
      *
      * @var list<string>
      */
-    protected $fillable = ['recipe_id', 'user_id', 'parent_id', 'content'];
+    protected $fillable = ['recipe_id', 'user_id', 'content'];
 
         // =============== RELATIONSHIPS ===============
 
@@ -35,26 +35,6 @@ class Comment extends Model
     public function recipe(): BelongsTo
     {
         return $this->belongsTo(Recipe::class);
-    }
-
-    /**
-     * Get the parent comment, if replied to.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function parent(): BelongsTo
-    {
-        return $this->belongsTo(Comment::class, 'parent_id');
-    }
-
-    /**
-     * Get the replies for a comment.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function replies(): HasMany
-    {
-        return $this->hasMany(Comment::class, 'parent_id');
     }
 
 }

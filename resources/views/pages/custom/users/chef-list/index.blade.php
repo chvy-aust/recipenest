@@ -1,60 +1,35 @@
 <x-mylayouts.layout-prototype>
-
-    <section id="chef" class="chef section">
-
-      {{-- Chef Section Title --}}
-        <div class="container section-title" data-aos="fade-up">
-            <div class="section-title-container d-flex align-items-center justify-content-between">
-                <div class="breadcrumb-section">
-                    <a href="#" class="previous">home /</a>
-                    <h2>CHEFS</h2>
-                </div>
-                <input class="search-bar" type="text" placeholder=" searching for new chefs ... ">
-                <button class="search-btn"><i class="bi bi-search"></i></button>
-            </div>
-            <div class="container d-flex align-items-left filter">
-                <a href=""><i class="bi bi-sort-down-alt"></i></a>
-                <p>filter</p>
-            </div>
-        </div>
-        {{-- End Chef Section Title --}}
-
-        {{-- Chef Section Content --}}
+    <section class="chef-list">
         <div class="container">
+            {{-- BREADCRUMBS CONTAINER --}}
+            <div class="section-title-container d-flex align-items-center justify-content-between">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">chefs</li>
+                    </ol>
+                </nav>
+            </div>
+            {{-- END BREADCRUMBS CONTAINER --}}
+            {{-- SEARCH BAR --}}
+            <div class="d-flex gap-2">
+                <button class="filter"><i class="bi bi-filter"></i></button>
+                <input class="search-bar flex-grow-1" type="text" placeholder=" searching for talented chefs ... ">
+                <button class="search-btn px-2"><i class="bi bi-search"></i></button>
+            </div>
+            {{-- END SEARCH BAR --}}
+            <hr>
+
             <div class="row gy-4">
-
-                {{-- Chef Card Template --}}
-                @foreach ($chef_data as $data)
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="chef-member d-flex align-items-start">
-                        <div class="pic"><img src="{{ $data->getImage() }}" class="img-fluid" alt=""></div>
-                        <div class="member-info">
-                            <div class="badge-bar">
-                                @foreach ( $data->badges as $badge )
-                                    <span class="badge {{ $badge->color }}">{{ $badge->icon }} {{ $badge->name }}</span>
-                                @endforeach
-                                <button class="more-btn"></button>
-                                <button class="more-btn"></button>
-                            </div>
-                            <h4>{{ $data->name }}</h4>
-
-                            <hr>
-                            <div class=bio>
-                                <p> {{ $data->short_description }}</p>
-                            </div>
-                            <hr>
-
-                            <a href="{{ $data->getLink() }}" class="readmore" style="text-decoration:none !important; border-bottom: none !important;">
-                                <span>Read More</span><i class="bi bi-arrow-right-circle-fill"></i>
-                            </a>
-                        </div>
-                    </div>
+                {{-- CHEF CARDS --}}
+                @foreach ($chef_data as $chef)
+                <div class="chef col-12 col-lg-6">
+                    <x-chef-card :chef="$chef"/>
                 </div>
                 @endforeach
-                {{-- End Chef Card Template --}}
+                {{-- END CHEF CARDS --}}
 
-                {{-- Pagination --}}
-                <section id="blog-pagination" class="blog-pagination section">
+                {{-- CHEF PAGINATION --}}
+                <section class="pagination">
                     <div class="container">
                         <div class="d-flex justify-content-center">
                             <ul>
@@ -69,11 +44,8 @@
                         </div>
                     </div>
                 </section>
-                {{-- End Pagination --}}
-
+                {{-- END CHEF PAGINATION --}}
             </div>
         </div>
-        {{-- End Chef Section Content --}}
     </section>
-
 </x-mylayouts.layout-prototype>

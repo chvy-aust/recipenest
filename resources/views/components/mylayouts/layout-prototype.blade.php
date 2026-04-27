@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -21,7 +21,7 @@
 
 
     <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="#" class="logo"><h1 class="sitename">RECIPEnest<i>!</i></h1></a>
+        <a href="{{ route('recipes.index') }}" class="logo"><h1 class="sitename">RECIPEnest<i>!</i></h1></a>
       <nav id="navmenu" class="navmenu">
         <ul>
             <li><a href="{{ route('recipes.index') }}">Recipes</a></li>
@@ -57,8 +57,8 @@
         <div class="container footer-top">
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6 footer-about">
-                    <div class="logo d-flex align-items-center">
-                        <p><b>RECIPEnest.</b></p>
+                    <div class="logo mb-0 d-flex align-items-center">
+                        <p class="mb-0"><b>RECIPEnest<i>!</i></b></p>
                     </div>
                     <div class="footer-contact pt-3">
                         <p>Share your recipes, discover new flavors,</p>
@@ -76,8 +76,7 @@
                     <ul>
                         <li><a href="{{ route('recipes.index') }}">Recipes</a></li>
                         <li><a href="{{ route('chefs.index') }}">Chefs</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="{{ route('chefs.index') }}">Dashboard</a></li>
                     </ul>
                 </div>
 
@@ -104,7 +103,7 @@
         </div>
 
     <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <b>RecipeNest</b> <span>All Rights Reserved</span></p>
+            <p>© <span>Copyright</span> <b>RecipeNest<i>!</i></b> </I><span>All Rights Reserved</span></p>
         </div>
     </footer>
 

@@ -1,369 +1,157 @@
+@php
+    $tags = $recipe->tags->pluck('name')->implode(', ');
+@endphp
+
 <x-mylayouts.layout-prototype>
-    <section>
-    <div class="container">
-        <div class="section-title-container d-flex align-items-center justify-content-between">
+    <section class="recipe-single">
+        <div class="container">
+            {{-- BREADCRUMBS CONTAINER --}}
+            <div class="section-title-container d-flex align-items-center justify-content-between">
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item">
-                            <a href="#" class="text-secondary">home</a></li>
-                        <li class="breadcrumb-item">
-                            <a href="#" class="text-secondary">recipes</a></li>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('recipes.index') }}">recipes</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{ $recipe->title }}</li>
                     </ol>
                 </nav>
             </div>
 
-      <div class="row gx-5">
-        <div class="col-lg-8">
-          <section id="" class="recipe-details section">
-              <article class="container">
-                <img src="{{ $recipe->getImage() }}" alt="" class="img-fluid post-img">
+            <div class="row gx-5 pb-4">
+                {{-- RECIPE DETAILS + COMMENT SECTION --}}
+                <div class="col-12 col-lg-8">
+                    <article class="recipe-details">
+                        {{-- RECIPE POST IMAGE  --}}
+                        <img src="{{ $recipe->getImage() }}" alt="{{ $recipe->name }} Image" class="img-fluid post-img">
+                        <span class="separator"></span>
 
-                <div class="d-flex justify-content-between align-items-center">
-                    <h2 class="title">{{ $recipe->title }}</h2>
-                    <button><i class="bi bi-share-fill" style="font-size:20px;"></i></button>
-                </div>
-
-
-                <hr style="margin:10px 0px 15px 0px;">
-                      <div class="meta-top">
-                        <p class="post-author-details">
-                            Posted by <a href="{{ $recipe->user->getLink() }}">{{ $recipe->user->name }}</a> on {{ $recipe->created_at->toFormattedDateString() }}</p>
-                        <span class="px-3 text-black-50" style="color:grey;">|</span>
-                        <div class="d-flex align-items-center">
-                          <i class="bi bi-chat-dots-fill" style="color:grey;"></i> <span class="ps-2" style="color:grey;">12</span>
+                        {{-- RECIPE TOP-META DETAILS --}}
+                        <div class="d-flex align-items-center justify-content-between">
+                            {{-- Author Name--}}
+                            <p class="post-author-details"><a href="{{ $recipe->user->getLink() }}"> {{ $recipe->user->name }}</a></p>
+                            <span class="separator-vertical">|</span>
+                            {{-- Comment Count --}}
+                            <p class="post-author-details"><i class="bi bi-chat-dots-fill me-2"></i>{{ $recipe->comments->count() }} Comments</p>
+                            {{-- Date --}}
+                            <span class="separator-vertical">|</span>
+                            <p class="post-author-details">{{ $recipe->created_at->toFormattedDateString() }}</p>
                         </div>
-                      </div><!-- End meta top -->
 
-                <div class="content">
-                  <p>
-                    Hello friends! Ji-Ji here. You know, the smells and tastes of my childhood aren't in a fancy restaurant or a bustling market. They’re in my grandmother’s small kitchen, watching her hands move with a love that only decades of cooking can bring. For me, comfort has a specific flavor. It's the gentle, savory warmth of her miso soup.
+                        <div class="recipe-content">
+                            {{-- RECIPE SHORT DESCRIPTION --}}
+                            <div class="recipe-title-description">
+                                <span class="separator"></span>
+                                <h2 class="title">{{ $recipe->title }}</h2>
+                                <p class="text-align-justify"> {!! $recipe->short_description !!} </p>
+                                <span class="separator"></span>
+                            </div>
 
-                    This recipe is my personal take on that classic comfort, but it’s also my way of keeping her close. It’s built on the same humble, beautiful ingredients she used, each one bringing its own texture and story to the bowl. So! Let me not keep you waiting and me share it with you!
-                </p>
+                            {{-- RECIPE SERVING SIZE + TIME --}}
+                            <div class="d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0"><i class="bi bi-fork-knife me-2"></i>Yield: NA</p>
+                                <span class="separator-vertical">|</span>
+                                <p class="text-muted mb-0"><i class="bi bi-alarm me-2"></i>Total Time: {{ $recipe->total_time }} {{ $recipe->total_time_unit }}</p>
+                            </div>
 
-                  <hr>
+                            {{-- RECIPE FULL DESCRIPTION --}}
+                            <div class="recipe-full-description">
+                                <span class="separator"></span>
+                                <p style="text-align:justify;"> {!! $recipe->full_description !!} </p>
+                            </div>
 
-                <p><strong>Servings:</strong> 4<br>
-                <strong>Prep time:</strong> 10 minutes<br>
-                <strong>Cook time:</strong> 15 minutes</p>
+                            {{-- RECIPE INGREDIENTS --}}
+                            <div class="recipe-ingrediants">
+                                <h3>Ingredients</h3>
+                                <span class="separator"></span>
+                                <p>{!! $recipe->ingredients !!}</p>
+                            </div>
 
-                <hr>
-
-                <h2>Ingredients</h2>
-                <hr>
-                <p>{{!! $recipe->ingredients !!}}</p>
-
-                <hr>
-
-                <h2>Instructions</p></h2>
-
-                <hr>
-
-                <p>{{!! $recipe->instructons !!}}</p>
-                <img src="assets/img/blog/blog-inside-post.jpg" class="img-fluid" alt="">
-                </div><!-- End post content -->
-
-                <div class="meta-bottom">
-                  <div class="meta d-flex align-items-center">
-                        <div class="d-flex align-items-center">
-                           <i class="bi bi-tags-fill"></i><span class="ps-2" style="color:grey;">Tags: Japanese, Vegetarian, Beginner Friendly, Soup</span>
+                            {{-- RECIPE INSTRUCTIONS --}}
+                            <div class="recipe-instructions">
+                                <h3>Instructions</h3>
+                                <span class="separator"></span>
+                                <p>{!! $recipe->instructions !!}</p>
+                            </div>
                         </div>
-                      </div>
+
+                        <div class="recipe-tag-update align-items-center">
+                            {{-- RECIPE LAST UPDATE TIME + TAGS --}}
+                            <span class="separator"></span>
+                            <p class="text-muted mb-0"><i class="bi bi-tags-fill text-muted pe-2"></i>Tags: {{ $tags }}</p>
+                            <p class="text-muted mb-0"><i class="bi bi-clock text-muted pe-2"></i>Last Updated: {{ $recipe->updated_at }}</p>
+                        </div>
+                    </article>
+
+                    <!-- RECIPE COMMENT FORM -->
+
+                    <section id="comment-form" class="comment-form section">
+                        <h4 class="my-3"><b>{{ $recipe->comments->count() }} Comments</b></h4>
+                        <div class="container px-0">
+
+                            <form action="">
+                                <h4>Post a Comment!</h4>
+                                @guest
+                                    <p class="text-muted mb-0"><i>Log in today to leave a super cool comment on this recipe.</i></p>
+                                @endguest
+                                @auth
+                                    <span class="separator"></span>
+                                    <div class="row">
+                                        <div class="col form-group">
+                                            <textarea name="comment" class="form-control" placeholder="Your Comment">
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit">Post Comment</button>
+                                    </div>
+                                @endauth
+                            </form>
+                        </div>
+                    </section>
+
+                    {{-- COMMENT SECTION --}}
+                    <section class="recipe-comments">
+                            @if ($recipe->comments)
+                                @foreach ( $recipe->comments as $comment )
+                                        <div class="comment">
+                                            <div class="d-flex align-items-center">
+                                                <img src="{{ $comment->user->getImage() }}" alt="">
+                                                <div class="align-items-center">
+                                                    <h5><a href="{{ $comment->user->getLink() }}">{{ $comment->user->name }}</a></h5>
+                                                    <p class="mb-0">{{ $comment->created_at->toFormattedDateString() }}</p>
+                                                </div>
+                                            </div>
+                                            <span class="separator"></span>
+                                            <p>{{ $comment->content }}</p>
+                                        </div>
+                                @endforeach
+                            @else
+                                <p class="text-muted"><i>Be the first one to leave a comment.</i></p>
+                            @endif
+                    </section>
                 </div>
-
-              </article>
-          </section>
-
-          <!-- Blog Comments Section -->
-          <section id="recipe-comments" class="recipe-comments section">
-
-            <div class="container">
-
-              <h4 class="comments-count">8 Comments</h4>
-
-              <div id="comment-1" class="comment">
-                <div class="d-flex">
-                  <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
-                  <div>
-                    <h5><a href="">Georgia Reader</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                    <time datetime="2020-01-01">01 Jan,2022</time>
-                    <p>
-                      Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis molestiae est qui cum soluta.
-                      Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End comment #1 -->
-
-              <div id="comment-2" class="comment">
-                <div class="d-flex">
-                  <div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
-                  <div>
-                    <h5><a href="">Aron Alvarado</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                    <time datetime="2020-01-01">01 Jan,2022</time>
-                    <p>
-                      Ipsam tempora sequi voluptatem quis sapiente non. Autem itaque eveniet saepe. Officiis illo ut beatae.
-                    </p>
-                  </div>
-                </div>
-
-                <div id="comment-reply-1" class="comment comment-reply">
-                  <div class="d-flex">
-                    <div class="comment-img"><img src="assets/img/blog/comments-3.jpg" alt=""></div>
-                    <div>
-                      <h5><a href="">Lynda Small</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                      <time datetime="2020-01-01">01 Jan,2022</time>
-                      <p>
-                        Enim ipsa eum fugiat fuga repellat. Commodi quo quo dicta. Est ullam aspernatur ut vitae quia mollitia id non. Qui ad quas nostrum rerum sed necessitatibus aut est. Eum officiis sed repellat maxime vero nisi natus. Amet nesciunt nesciunt qui illum omnis est et dolor recusandae.
-
-                        Recusandae sit ad aut impedit et. Ipsa labore dolor impedit et natus in porro aut. Magnam qui cum. Illo similique occaecati nihil modi eligendi. Pariatur distinctio labore omnis incidunt et illum. Expedita et dignissimos distinctio laborum minima fugiat.
-
-                        Libero corporis qui. Nam illo odio beatae enim ducimus. Harum reiciendis error dolorum non autem quisquam vero rerum neque.
-                      </p>
+                {{-- RECIPE SINGLE SIDEBAR --}}
+                <div class="col-12 col-lg-4">
+                    <!-- Author Profile -->
+                    <x-chef-card :chef="$recipe->user"/>
+                    <span class="separator"></span>
+                    <span class="recommended-recipes-header">More Posts like This</span>
+                    <span class="separator"></span>
+                    {{-- MORE RECIPES FROM THE AUTHOR --}}
+                    <div class="row gx-1 gy-1">
+                    @if ($recommendedRecipes->count() == 4)
+                        @foreach ($recommendedRecipes as $recipe)
+                            <div class="recommended-recipe col-6">
+                                <a href="{{ $recipe->getLink() }}" title="{{ $recipe->name }}">
+                                    <img src="{{ $recipe->getImage() }}" alt="{{ $recipe->name }} Image">
+                                </a>
+                            </div>
+                        @endforeach
+                    @else
+                        <p class="text-muted"><i>> This chef doesn't have enough recipes yet...</i></p>
+                    @endif
                     </div>
-                  </div>
-
-                  <div id="comment-reply-2" class="comment comment-reply">
-                    <div class="d-flex">
-                      <div class="comment-img"><img src="assets/img/blog/comments-4.jpg" alt=""></div>
-                      <div>
-                        <h5><a href="">Sianna Ramsay</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                        <time datetime="2020-01-01">01 Jan,2022</time>
-                        <p>
-                          Et dignissimos impedit nulla et quo distinctio ex nemo. Omnis quia dolores cupiditate et. Ut unde qui eligendi sapiente omnis ullam. Placeat porro est commodi est officiis voluptas repellat quisquam possimus. Perferendis id consectetur necessitatibus.
-                        </p>
-                      </div>
-                    </div>
-
-                  </div><!-- End comment reply #2-->
-
-                </div><!-- End comment reply #1-->
-
-              </div><!-- End comment #2-->
-
-              <div id="comment-3" class="comment">
-                <div class="d-flex">
-                  <div class="comment-img"><img src="assets/img/blog/comments-5.jpg" alt=""></div>
-                  <div>
-                    <h5><a href="">Nolan Davidson</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                    <time datetime="2020-01-01">01 Jan,2022</time>
-                    <p>
-                      Distinctio nesciunt rerum reprehenderit sed. Iste omnis eius repellendus quia nihil ut accusantium tempore. Nesciunt expedita id dolor exercitationem aspernatur aut quam ut. Voluptatem est accusamus iste at.
-                      Non aut et et esse qui sit modi neque. Exercitationem et eos aspernatur. Ea est consequuntur officia beatae ea aut eos soluta. Non qui dolorum voluptatibus et optio veniam. Quam officia sit nostrum dolorem.
-                    </p>
-                  </div>
                 </div>
-
-              </div><!-- End comment #3 -->
-
-              <div id="comment-4" class="comment">
-                <div class="d-flex">
-                  <div class="comment-img"><img src="assets/img/blog/comments-6.jpg" alt=""></div>
-                  <div>
-                    <h5><a href="">Kay Duggan</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                    <time datetime="2020-01-01">01 Jan,2022</time>
-                    <p>
-                      Dolorem atque aut. Omnis doloremque blanditiis quia eum porro quis ut velit tempore. Cumque sed quia ut maxime. Est ad aut cum. Ut exercitationem non in fugiat.
-                    </p>
-                  </div>
-                </div>
-
-              </div><!-- End comment #4 -->
-
             </div>
 
-          </section><!-- /Blog Comments Section -->
-
-          <!-- Comment Form Section -->
-          <section id="comment-form" class="comment-form section">
-            <div class="container">
-
-              <form action="">
-
-                <h4>Post Comment</h4>
-                <p>Your email address will not be published. Required fields are marked * </p>
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <input name="name" type="text" class="form-control" placeholder="Your Name*">
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <input name="email" type="text" class="form-control" placeholder="Your Email*">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col form-group">
-                    <input name="website" type="text" class="form-control" placeholder="Your Website">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col form-group">
-                    <textarea name="comment" class="form-control" placeholder="Your Comment*"></textarea>
-                  </div>
-                </div>
-
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Post Comment</button>
-                </div>
-
-              </form>
-
-            </div>
-          </section><!-- /Comment Form Section -->
-
         </div>
-
-        <div class="col-lg-4 sidebar">
-
-          <div class="widgets-container" style="margin-top:17px;">
-
-            <!-- Blog Author Widget -->
-            <div class="recipe-author-widget widget-item" style="border:black solid 3px;">
-
-              <div class="d-flex flex-column">
-                <div class="d-flex align-items-center">
-                  <img src="{{ asset('storage/images/profiles/jia-xifeng-chef.jpg') }}" class="rounded flex-shrink-0" alt="" style="border:black solid 3px; max-height: 200px;">
-                  {{-- img rounded-circle --}}
-                  <div class="flex-grow-1" style="padding-right:15px;">
-                    <div class="badge-bar">
-                        <span class="badge green">veteran chef</span>
-                        <span class="badge red">communitity favourite</span>
-                        <span class="badge red">sweet tooth</span>
-                        <span class="badge green">verified</span>
-                        <button class="more-btn"></button>
-                    </div>
-                    <h4 class="recipe-author-name">Jia Xifeng</h4>
-                  </div>
-                </div>
-
-                <hr style="margin:15px 0px;">
-
-                <p>
-                 Hi Hello! My name is Jia and I love love making food! I
-                 have been in the industry for over 15 years
-                 with my own family-run restaurant. We love everything plant-based
-                 over here and I look forward to sharing my recipes with you all.
-                </p>
-
-                <hr style="margin:15px 0px;">
-
-                <p style="font-weight:bold;">
-                    View Profile >
-                </p>
-
-              </div>
-
-            </div><!--/Blog Author Widget -->
-
-            <!-- Recent Posts Widget -->
-            <div class="recent-posts-widget widget-item" style="border:black solid 3px;">
-
-              <h3 class="widget-title">More Posts like This</h3>
-
-              <hr style="margin: 10px 0px 15px 0px;">
-
-              <div class="post-item">
-                <img src="{{ asset('storage/images/media/recipe7.jpg') }}" alt="" class="flex-shrink-0 rounded">
-                <div>
-                  <h4><a href="recipe-details.html">Constellation Cauliflower Soup</a></h4>
-                  <div class="meta-bottom">
-                  <div class="meta d-flex align-items-center">
-                        <div class="d-flex align-items-center">
-                           <i class="bi bi-tags-fill" style="color:grey;"></i><span class="ps-2" style="color:grey;">Tags: Soup, Beginner Friendly...</span>
-                        </div>
-                      </div>
-                </div>
-                </div>
-              </div><!-- End recent post item-->
-
-              <hr>
-              <div class="post-item">
-                <img src="{{ asset('storage/images/media/recipe8.jpg') }}" alt="" class="flex-shrink-0 rounded">
-                <div>
-                  <h4><a href="blog-details.html">Eel Rice Bowl (Unadon)</a></h4>
-                  <div class="meta-bottom">
-                  <div class="meta d-flex align-items-center">
-                        <div class="d-flex align-items-center">
-                           <i class="bi bi-tags-fill" style="color:grey;"></i><span class="ps-2" style="color:grey;">Tags: Japanese, Sweet & Savory...</span>
-                        </div>
-                      </div>
-                </div>
-              </div>
-              </div>
-
-              <hr>
-              <div class="post-item">
-                <img src="{{ asset('storage/images/media/recipe9.jpg') }}" alt="" class="flex-shrink-0 rounded">
-                <div>
-                  <h4><a href="blog-details.html">Miso-Glazed Eggplant</a></h4>
-                  <div class="meta-bottom">
-                  <div class="meta d-flex align-items-center">
-                        <div class="d-flex align-items-center">
-                           <i class="bi bi-tags-fill" style="color:grey;"></i><span class="ps-2" style="color:grey;">Tags: Sweet & Savory, Vegetarian...</span>
-                        </div>
-                      </div>
-                </div>
-                </div>
-              </div><!-- End recent post item-->
-
-              <div class="post-item">
-                <img src="{{ asset('storage/images/media/recipe7.jpg') }}" alt="" class="flex-shrink-0 rounded">
-                <div>
-                  <h4><a href="blog-details.html">Constellation Cauliflower Soup</a></h4>
-                  <div class="meta-bottom">
-                  <div class="meta d-flex align-items-center">
-                        <div class="d-flex align-items-center">
-                           <i class="bi bi-tags-fill" style="color:grey;"></i><span class="ps-2" style="color:grey;">Tags: Soup, Beginner Friendly...</span>
-                        </div>
-                      </div>
-                </div>
-              </div>
-              </div><!-- End recent post item-->
-
-              <div class="post-item">
-                <img src="{{ asset('storage/images/media/recipe7.jpg') }}" alt="" class="flex-shrink-0 rounded">
-                <div>
-                  <h4><a href="blog-details.html">Constellation Cauliflower Soup</a></h4>
-                  <div class="meta-bottom">
-                  <div class="meta d-flex align-items-center">
-                        <div class="d-flex align-items-center">
-                           <i class="bi bi-tags-fill" style="color:grey;"></i><span class="ps-2" style="color:grey;">Tags: Soup, Beginner Friendly...</span>
-                        </div>
-                      </div>
-                </div>
-              </div>
-              </div><!-- End recent post item-->
-
-
-              </div><!-- End recent post item-->
-
-            </div><!--/Recent Posts Widget -->
-
-            <!-- Tags Widget -->
-            <div class="tags-widget widget-item">
-
-              <h3 class="widget-title">Tags</h3>
-              <ul>
-                <li><a href="#">App</a></li>
-                <li><a href="#">IT</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Mac</a></li>
-                <li><a href="#">Design</a></li>
-                <li><a href="#">Office</a></li>
-                <li><a href="#">Creative</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Smart</a></li>
-                <li><a href="#">Tips</a></li>
-                <li><a href="#">Marketing</a></li>
-              </ul>
-
-            </div><!--/Tags Widget -->
-
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-</section>
+    </section>
 </x-mylayouts.layout-prototype>
