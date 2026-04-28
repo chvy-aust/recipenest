@@ -8,12 +8,12 @@ use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Navigation\NavigationItem;
 use Filament\Pages\Dashboard;
-use Filament\View\PanelsRenderHook;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Widgets\AccountWidget;
-use Filament\Widgets\FilamentInfoWidget;
+use App\Filament\Widgets\ChefStats;
+use App\Filament\Widgets\TopTagsWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -45,7 +45,8 @@ class AuthorPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 AccountWidget::class,
-                FilamentInfoWidget::class,
+                ChefStats::class,
+                TopTagsWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -61,12 +62,11 @@ class AuthorPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->topbar(false)
             ->navigationItems([
                 NavigationItem::make('Return to Main Site')
                     ->url('/recipes')
                     ->icon('heroicon-o-arrow-left')
-                    ->sort(3), 
+                    ->sort(3),
             ])
             ->sidebarCollapsibleOnDesktop(false)
             ->sidebarFullyCollapsibleOnDesktop(false);
