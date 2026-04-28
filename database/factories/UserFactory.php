@@ -34,7 +34,9 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'role' => 'chef',
             'image_path' => '/images/profiles/',
-            'image_name' => $this->randomImage(),
+            'image_name' => $this->randomProfileImage(),
+            'header_path' => '/images/headers/',
+            'header_name' => $this->randomHeaderImage(),
             'short_description' => fake()->sentences(fake()->numberBetween(1, 2), true),
             'full_description' => fake()->paragraphs(fake()->numberBetween(1, 6), true),
             'twitter' => fake()->boolean(50) ? 'https://x.com/' : null,
@@ -73,9 +75,22 @@ class UserFactory extends Factory
     }
 
 
-    public function randomImage()
+    public function randomProfileImage()
     {
         $images = Storage::disk('profiles')->files();
+
+        // Select a random index from the array
+        $randomIndex = array_rand($images);
+
+        // Retrieve the value corresponding to the random index
+        $randomValue = $images[$randomIndex];
+
+        return $randomValue;
+    }
+
+    public function randomHeaderImage()
+    {
+        $images = Storage::disk('headers')->files();
 
         // Select a random index from the array
         $randomIndex = array_rand($images);

@@ -20,12 +20,27 @@ class UserInfolist
                 Section::make('Profile Details')
                     ->schema([
                         TextEntry::make('name'),
-                        ImageEntry::make('image_name')->label('Profile Image')->disk('profiles')->imageHeight(150)->extraAttributes(['class' => 'mx-auto']),
-                        TextEntry::make('short_description'),
-                        TextEntry::make('full_description'),
-                        TextEntry::make('social_media_1'),
-                        TextEntry::make('social_media_2'),
-                        TextEntry::make('social_media_3'),
+                        ImageEntry::make('header_name')
+                            ->label('Header Picture')
+                            ->disk('headers')
+                            ->imageHeight(225)
+                            ->imageWidth(512)
+                            ->extraAttributes(['class' => 'mx-auto']),
+                        ImageEntry::make('image_name')
+                            ->label('Profile Picture')
+                            ->disk('profiles')
+                            ->imageHeight(150)
+                            ->imageWidth(150)
+                            ->extraAttributes(['class' => 'mx-auto']),
+                        TextEntry::make('short_description')
+                            ->label('Note'),
+                        TextEntry::make('full_description')
+                            ->label('Bio'),
+                        TextEntry::make('twitter'),
+                        TextEntry::make('tiktok'),
+                        TextEntry::make('facebook'),
+                        TextEntry::make('instagram'),
+                        TextEntry::make('youtube'),
 
                     ])
                     ->columnSpan(8),
@@ -33,12 +48,11 @@ class UserInfolist
                 Section::make('Account Details')
                     ->schema([
                         TextEntry::make('email')
-                            ->label('Email address'),
+                            ->label('Email Address'),
                         TextEntry::make('email_verified_at')
                             ->dateTime(),
                         TextEntry::make('created_at')
                             ->dateTime(),
-                        TextEntry::make('updated_at')
                     ])
                     ->columnSpan(4),
 

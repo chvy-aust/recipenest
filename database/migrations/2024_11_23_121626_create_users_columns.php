@@ -14,7 +14,7 @@ return new class() extends Migration {
             $table->string('role', 20)->default('user')->comment('user,chef');
             $table->string('image_path', 100)->default('/images/profiles/');
             $table->string('image_name', 100)->default('default.jpg');
-            $table->string('header_path', 100)->default('/images/profiles/');
+            $table->string('header_path', 100)->default('/images/headers/');
             $table->string('header_name', 100)->default('default.jpg');
             $table->string('short_description', 200)->default('New Author');
             $table->text('full_description')->nullable();

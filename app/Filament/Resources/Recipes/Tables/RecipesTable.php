@@ -18,30 +18,20 @@ class RecipesTable
     {
         return $table
             ->columns([
-                // TextColumn::make('user.name')
-                //     ->numeric()
-                //     ->sortable(),
-                TextColumn::make('category')
+                Select::make('tags')
+                    ->multiple()
+                    ->relationship('tags', 'name')
                     ->searchable()
-                    ->sortable(),
+                    ->preload(),
                 TextColumn::make('title')
                     ->searchable()
                     ->sortable(),
-                // TextColumn::make('short_description')
-                //     ->searchable(),
-                // ImageColumn::make('image'),
                 ImageColumn::make('Image')
                     ->state(function (Model $record) {
                         return $record->getImage();
                     })
-                    ->imageWidth(50)
-                    ->imageHeight(50),
-                // TextColumn::make('total_time')
-                //     ->numeric()
-                //     ->sortable(),
-                // TextColumn::make('total_time_unit')
-                //     ->searchable(),
-
+                    ->imageWidth(100)
+                    ->imageHeight(100),
                 TextColumn::make('total_time')
                     ->label('Read Time')
                     ->getStateUsing(fn($record) => "{$record->total_time} {$record->total_time_unit}")
@@ -50,20 +40,10 @@ class RecipesTable
                 TextColumn::make('publish_date')
                     ->dateTime('F jS Y')
                     ->sortable(),
-                // TextColumn::make('featured')
-                //     ->numeric()
-                //     ->sortable(),
                 IconColumn::make('featured')
                     ->boolean(),
-                IconColumn::make('public')
+                IconColumn::make('published')
                     ->boolean(),
-                // TextColumn::make('public')
-                //     ->numeric()
-                //     ->sortable(),
-                TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()

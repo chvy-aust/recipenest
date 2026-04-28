@@ -10,16 +10,9 @@
         {{-- END CHEF PROFILE HEADER + PICTURE --}}
 
 
-        {{-- WHITESPACE + ICON + FOLLOW BUTTON --}}
-        <div class="profile-picture-under d-flex">
-            <div class="col-6"></div>
-            <div class="col-6 d-flex align-items-start pt-3">
-                @if ($mode === 'full')
-                <button class="follow-btn"><i class="bi bi-person-fill-add"></i>follow</button>
-                @endif
-            </div>
-        </div>
-        {{-- END WHITESPACE + ICON + FOLLOW BUTTON --}}
+        {{-- WHITESPACE --}}
+        <div class="profile-picture-under"></div>
+        {{-- END WHITESPACE --}}
 
     </div>
     <div class="d-flex flex-column profile-container flex-grow-1">

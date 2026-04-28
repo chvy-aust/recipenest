@@ -86,7 +86,8 @@
                         <h4 class="my-3"><b>{{ $recipe->comments->count() }} Comments</b></h4>
                         <div class="container px-0">
 
-                            <form action="">
+                            <form method="POST" action="{{ route('comments.store', $recipe)}}">
+                                @csrf
                                 <h4>Post a Comment!</h4>
                                 @guest
                                     <p class="text-muted mb-0"><i>Log in today to leave a super cool comment on this recipe.</i></p>
@@ -95,8 +96,7 @@
                                     <span class="separator"></span>
                                     <div class="row">
                                         <div class="col form-group">
-                                            <textarea name="comment" class="form-control" placeholder="Your Comment">
-                                            </textarea>
+                                            <textarea name="comment" class="form-control" placeholder="Your Comment" maxlength="1500" style="resize:none"></textarea>
                                         </div>
                                     </div>
                                     <div class="text-center">
@@ -108,25 +108,32 @@
                     </section>
 
                     {{-- COMMENT SECTION --}}
-                    <section class="recipe-comments">
-                            @if ($recipe->comments)
-                                @foreach ( $recipe->comments as $comment )
-                                        <div class="comment">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{ $comment->user->getImage() }}" alt="">
-                                                <div class="align-items-center">
-                                                    <h5><a href="{{ $comment->user->getLink() }}">{{ $comment->user->name }}</a></h5>
-                                                    <p class="mb-0">{{ $comment->created_at->toFormattedDateString() }}</p>
-                                                </div>
+                    <section id="recipe-comments" class="recipe-comments">
+                            {{-- COMMENT ITEMS --}}
+                            @forelse ( $comments as $comment )
+                                <div class="comment">
+                                    <div class="d-flex align-items-center">
+                                        <img src="{{ $comment->user->getImage() }}" alt="">
+                                            <div class="align-items-center">
+                                                <h5><a href="{{ $comment->user->getLink() }}">{{ $comment->user->name }}</a></h5>
+                                                <p class="mb-0">{{ $comment->created_at->toFormattedDateString() }}</p>
                                             </div>
-                                            <span class="separator"></span>
-                                            <p>{{ $comment->content }}</p>
-                                        </div>
-                                @endforeach
-                            @else
+                                    </div>
+                                    <span class="separator"></span>
+                                    <p>{{ $comment->content }}</p>
+                                </div>
+                            @empty
                                 <p class="text-muted"><i>Be the first one to leave a comment.</i></p>
-                            @endif
+                            @endforelse
+                            {{-- END COMMENT ITEMS --}}
+
+                            {{-- COMMENT PAGINATION --}}
+                            <div class="d-flex justify-content-center mt-5">
+                                {{ $comments->fragment('recipe-comments')->links() }}
+                            </div>
+                            {{-- END COMMENT PAGINATION --}}
                     </section>
+                    {{-- END COMMENT SECTION --}}
                 </div>
                 {{-- RECIPE SINGLE SIDEBAR --}}
                 <div class="col-12 col-lg-4">

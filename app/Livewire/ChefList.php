@@ -2,12 +2,11 @@
 
 namespace App\Livewire;
 
-use App\Models\Recipe;
-use App\Models\Tag;
+use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class RecipeList extends Component
+class ChefList extends Component
 {
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
@@ -15,8 +14,7 @@ class RecipeList extends Component
 
     public $search = "";
     public $sort = "recent";
-    public $tags = '';
-    protected $queryString = ['search', 'sort', 'tags'];
+    protected $queryString = ['search', 'sort'];
 
     public function updatingSort()
     {
@@ -28,26 +26,12 @@ class RecipeList extends Component
         $this->resetPage();
     }
 
-    public function updatingTags()
-    {
-        $this->resetPage();
-    }
-
-    public function clearFilters()
-    {
-        $this->search = '';
-        $this->sort = 'recent';
-        $this->tags = '';
-        $this->resetPage();
-    }
-
     public function render()
     {
-        $recipes = Recipe::list()->filter([
+        $chefs = User::list()->filter([
             'search' => $this->search,
             'sort' => $this->sort,
-            'tags' => $this->tags,
         ])->paginate(8);
-        return view('livewire.recipe-list', ['recipes' => $recipes]);
+        return view('livewire.chef-list', ['chefs' => $chefs]);
     }
 }

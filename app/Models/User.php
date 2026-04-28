@@ -121,6 +121,18 @@ class User extends Authenticatable
         $query->where('id', $id);
     }
 
+    public function scopeFilter(Builder $query, array $values)
+    {
+        $query->searchName($values['search'] ?? '');
+    }
+
+    public function scopeSearchName(Builder $query, $value)
+    {
+        if (!empty($value)) {
+            $query->where('name', 'LIKE', "%$value%");
+        }
+    }
+
 
 
     // =============== FUNCTIONS ===============

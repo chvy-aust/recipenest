@@ -430,7 +430,7 @@ $body-secondary-color: #767676;
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  animation: animate-preloader 1.5s linear infinite;
+  // animation: animate-preloader 1.5s linear infinite;
 }
 
 @keyframes animate-preloader {
@@ -921,126 +921,6 @@ font-size: 16px;
 }
 
 /*--------------------------------------------------------------
-# Recipe List Section
---------------------------------------------------------------*/
-
-
-
-
-/*--------------------------------------------------------------
-# Blog Pagination Section
---------------------------------------------------------------*/
-.blog-pagination {
-  padding-top: 20px;
-}
-
-.blog-pagination ul {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.blog-pagination li {
-  margin: 0 5px;
-}
-
-.blog-pagination li a {
-  padding: 7px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: color-mix(black, transparent 100%) solid 2px;
-  border-radius: 5px;
-}
-
-.blog-pagination li a.active,
-.blog-pagination li a:hover {
-  background: #6B9C73;
-  color: black;
-  border-color: color-mix(black, transparent 0%);
-}
-
-.blog-pagination li a:hover { background: #93b899; }
-
-
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
-.contact .info-item+.info-item {
-  margin-top: 40px;
-}
-
-.contact .info-item i {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
-}
-
-.contact .info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
-}
-
-.contact .php-email-form {
-  height: 100%;
-}
-
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 4px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-
-/*--------------------------------------------------------------
 # RECIPENEST-SPECIFIC STYLING
 --------------------------------------------------------------*/
 
@@ -1219,29 +1099,15 @@ font-size: 16px;
     font-weight: lighter;
 }
 
-.follow-btn {
-    font-family: var(--bs-font-family-base);
+.share-btn {
     font-size: 20px;
     font-weight: 600;
     margin-right: 20px;
     margin-left: auto;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
     border: none;
     background: white;
-    border: rgba(0, 0, 0, 0) solid 2px;
 
-}
-
-.follow-btn:hover {
-    background-color: #6B9C73;
-    border-color: black;
-}
-
-.follow-btn:active { border-radius: 10px; }
-
-.follow-btn i {
-    margin-right:3px;
 }
 
 .badge-bar .badge {
@@ -1351,4 +1217,22 @@ font-size: 16px;
     text-align: center;
     color:#676666;
     font-style: italic;
+}
+
+.filter-overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    width: 280px;
+}
+
+/* Optional: dark mode / your theme */
+.filter-overlay input {
+    width: 100%;
 }

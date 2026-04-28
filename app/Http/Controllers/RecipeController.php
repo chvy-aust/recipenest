@@ -14,12 +14,14 @@ class RecipeController extends Controller
 
     public function show(string $id){
         // Eagerly load users + tags + comments associated with recipe
-        $recipe = Recipe::with(['user', 'tags', 'comments.user'])->list()->recipe($id)->first();
+        $recipe = Recipe::with(['user', 'tags'])->list()->recipe($id)->first();
+        // Return paginated comments
+        $comments = $recipe->comments()->with('user')->paginate(5);
         // Return recipes from the same author that is not the current recipe
         $recommendedRecipes = Recipe::where('user_id', $recipe->user_id)
                         ->where("id", "!=", $recipe->id)
                         ->limit(4)
                         ->get();
-        return view('pages.custom.users.recipe-single.show', compact('recipe', 'recommendedRecipes'));
+        return view('pages.custom.users.recipe-single.show', compact('recipe', 'comments', 'recommendedRecipes'));
     }
 }

@@ -14,7 +14,7 @@ class ChefController extends Controller
 
     public function show($id) {
         $chef = User::list()->chef($id)->first();
-        $featured_data = $chef->recipes()->where('featured', 1)->get();
+        $featured_data = $chef->recipes()->list()->where('featured', 1)->get();
         return view('pages.custom.users.profile.show', compact('chef', 'featured_data'));
     }
 

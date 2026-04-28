@@ -120,7 +120,7 @@ import Swiper from 'swiper';
 
 //   RECIPE NEST SPECIFIC FUNCTIONS
 
-  /* Toggle/Hide badges */
+  /* Show/Hide badges */
 function loadBadges() {
     document.querySelectorAll('.badge-bar').forEach((bar) => {
         const badges = bar.querySelectorAll('.badge');
@@ -156,18 +156,32 @@ function loadBadges() {
     window.addEventListener("load", loadBadges);
     window.addEventListener("resize", loadBadges);
 
-const accountMenuToggleBtn = document.querySelector('.account-menu-toggle');
-function toggleAccountMenu() {
-    const menuOpened = "bi bi-chevron-down";
-    const menuClosed = "bi bi-chevron-up";
 
-    if (accountMenuToggleBtn.classList.contains(menuClosed)) {
-            accountMenuToggleBtn.classList.replace(menuClosed, menuOpened)
+document.addEventListener('DOMContentLoaded', function() {
+    let shareBtn = document.querySelector('.share-btn');
+    if (shareBtn) {
+        shareBtn.addEventListener('click', copyUrl);
+    }
+});
+
+function copyToClipboard(text) {
+    if (!text) return;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text)
+            .then(() => alert('Link copied!'))
+            .catch(err => console.error(err));
     } else {
-            accountMenuToggleBtn.classList.replace(menuOpened, menuClosed)
-    };
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            alert('Link copied!');
+        } catch (err) {
+            alert('Unable to copy');
+        }
+        document.body.removeChild(textarea);
+    }
 }
-
-    accountMenuToggleBtn.addEventListener('click', toggleAccountMenu)
-
 })();
