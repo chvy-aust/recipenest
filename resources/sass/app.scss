@@ -1326,32 +1326,29 @@ font-size: 16px;
     border: black solid 2px;
     font-weight: 300;
     padding: 5px 0px;
+    display: block;
 }
 
 .portfolio-footer {
+    display: block;
     text-align: center;
     font: 15px Poppins, Century Gothic, Arial, san-serif;
     font-style: italic;
+    padding: 8px 0px;
 }
 
-@media (max-width:991px) {
-    .portfolio-header {
-    padding:15px;
-    border-top: black dashed 1px;
-}
-}
-
-.portfolio-container {
+.portfolio {
     margin-top: 15px;
     overflow-y:auto;
     max-height:650px;
 }
 
-.portfolio-container .recipe-card+.recipe-card {
-    margin-top:25px;
+.portfolio-item+.portfolio-item {
+    margin-top: 20px;
 }
 
-.portfolio-container .recipe-posts+.recipe-posts::before {
-    padding-top:15px;
+.portfolio-placeholder {
+    text-align: center;
+    color:#676666;
+    font-style: italic;
 }
-

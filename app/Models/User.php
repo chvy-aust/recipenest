@@ -72,8 +72,6 @@ class User extends Authenticatable
         return $this->hasMany(Recipe::class);
     }
 
-
-
     /**
      * Get all of the badges for the User
      *
@@ -118,7 +116,7 @@ class User extends Authenticatable
         ;
     }
 
-    public function scopeAuthor(Builder $query, $id)
+    public function scopeChef(Builder $query, $id)
     {
         $query->where('id', $id);
     }

@@ -55,6 +55,7 @@ class Recipe extends Model
     {
         $query->where('id', '>', 0)
             ->with('user')
+            ->with('tags')
             ->where('published', true)
             ->orderBy('created_at', 'desc');
     }

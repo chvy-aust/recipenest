@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Recipe;
-use Illuminate\Http\Request;
 
 class RecipeController extends Controller
 {
     public function index()
     {
-        // Eagerly load users + tags associated with recipe
-        $recipes = Recipe::with(['user', 'tags'])->list()-> paginate(8);
+        $recipes = Recipe::list()-> paginate(8);
         return view('pages.custom.users.recipe-list.index', compact('recipes'));
     }
 

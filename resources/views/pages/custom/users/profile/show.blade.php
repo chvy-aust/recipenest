@@ -18,34 +18,23 @@
                 {{-- END CHEF PROFILE CARD --}}
 
                 {{-- CHEF PORTFOLIO --}}
-                <div class="col-12 col-lg-6 d-flex flex-column mb-3">
-                    <div class="portfolio-header col-12 justify-content-center">
-                        <p class="mb-0">@ {{ $chef->name}}'s official portfolio</p>
-                    </div>
-                    <div class="portfolio-container">
-                        <section id="recipe-posts" class="recipe-posts section">
-                            <div class="container ps-0">
-                                <div class="row d-flex gy-4">
-                                    @foreach ($featured_data as $recipe)
-                                        <div class="col-lg-12"><x-recipe-card :recipe="$recipe" /></div>
-                                    @endforeach
-                                    @if ($featured_data->isEmpty())
-                                        <div class="col-12 text-center py-5">
-                                            <p class="text-muted">🧑‍🍳 This chef is still cooking up their portfolio!</p>
-                                        </div>
-                                    @else
-                                        <div class="portfolio-footer col-12 justify-content-center">
-                                            <p class="mb-0 mt-1">End of Portfolio</p>
-                                        </div>
-                                    @endif
+                <div class="col-12 col-lg-6 mb-3">
+                    <span class="portfolio-header">@ {{ $chef->name}}'s official portfolio</span>
+                    <div class="portfolio container ps-0 pt-3">
+                            @forelse ($featured_data as $recipe)
+                                <div class="portfolio-item">
+                                    <x-recipe-card :recipe="$recipe" />
                                 </div>
-                            </div>
-                        </section>
+                                @if($loop->last)
+                                    <span class="portfolio-footer">End of Portfolio</span>
+                                @endif
+                            @empty
+                                <span class="portfolio-placeholder col-12">🧑‍🍳 This chef is still cooking up their portfolio!</span>
+                            @endforelse
                     </div>
                 </div>
-
+                {{-- END CHEF PORTFOLIO --}}
             </div>
         </div>
     </section>
-
 </x-mylayouts.layout-prototype>

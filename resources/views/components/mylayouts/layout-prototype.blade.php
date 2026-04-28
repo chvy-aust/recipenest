@@ -17,43 +17,45 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
+        <header id="header" class="header d-flex align-items-center sticky-top">
 
 
-    <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="{{ route('recipes.index') }}" class="logo"><h1 class="sitename">RECIPEnest<i>!</i></h1></a>
-      <nav id="navmenu" class="navmenu">
-        <ul>
-            <li><a href="{{ route('recipes.index') }}">Recipes</a></li>
-            <li><a href="{{ route('chefs.index') }}">Chefs</a></li>
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+            <a href="{{ route('recipes.index') }}" class="logo"><h1 class="sitename">RECIPEnest<i>!</i></h1></a>
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="{{ route('recipes.index') }}">Recipes</a></li>
+                <li><a href="{{ route('chefs.index') }}">Chefs</a></li>
 
-            @guest
-            <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a class="register-btn" href="{{ route('register') }}" >Sign Up</a></li>
-            @endguest
+                @guest
+                <li><a href="{{ route('filament.author.auth.login') }}">Login</a></li>
+                {{-- temporary static register reference - to be resolved --}}
+                <li><a class="register-btn" href="/dashboard/register" >Sign Up</a></li>
+                @endguest
 
-            @auth
-            <li><a>Dashboard</a></li>
-            <li>
-                <a href="{{ route('logout') }}"onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">Logout</a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
-            </li>
-            @endauth
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                @auth
+                <li><a href="{{ route('filament.author.pages.dashboard') }}">Dashboard</a></li>
+                <li>
+                    <a href="{{ route('filament.author.auth.logout') }}"onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">Logout</a>
+                    <form id="logout-form" action="{{ route('filament.author.auth.logout') }}" method="POST" class="d-none">@csrf</form>
+                </li>
+                @endauth
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 
-      </nav>
-    </div>
-  </header>
+        </nav>
+        </div>
+    </header>
 
-  <main class="main">
+
+    <main class="main">
 
     {{ $slot }}
 
-  </main>
+    </main>
 
-  <footer id="footer" class="footer">
+    <footer id="footer" class="footer">
         <div class="container footer-top">
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6 footer-about">
@@ -76,7 +78,7 @@
                     <ul>
                         <li><a href="{{ route('recipes.index') }}">Recipes</a></li>
                         <li><a href="{{ route('chefs.index') }}">Chefs</a></li>
-                        <li><a href="{{ route('chefs.index') }}">Dashboard</a></li>
+                        <li><a href="{{ route('filament.author.pages.dashboard') }}">Dashboard</a></li>
                     </ul>
                 </div>
 
@@ -102,10 +104,11 @@
             </div>
         </div>
 
-    <div class="container copyright text-center mt-4">
+        <div class="container copyright text-center mt-4">
             <p>© <span>Copyright</span> <b>RecipeNest<i>!</i></b> </I><span>All Rights Reserved</span></p>
         </div>
     </footer>
+
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">

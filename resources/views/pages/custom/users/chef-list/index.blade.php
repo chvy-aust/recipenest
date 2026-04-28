@@ -10,6 +10,7 @@
                 </nav>
             </div>
             {{-- END BREADCRUMBS CONTAINER --}}
+            
             {{-- SEARCH BAR --}}
             <div class="d-flex gap-2">
                 <button class="filter"><i class="bi bi-filter"></i></button>
@@ -19,33 +20,21 @@
             {{-- END SEARCH BAR --}}
             <hr>
 
+            {{-- CHEF CARDS --}}
             <div class="row gy-4">
-                {{-- CHEF CARDS --}}
                 @foreach ($chef_data as $chef)
                 <div class="chef col-12 col-lg-6">
                     <x-chef-card :chef="$chef"/>
                 </div>
                 @endforeach
-                {{-- END CHEF CARDS --}}
-
-                {{-- CHEF PAGINATION --}}
-                <section class="pagination">
-                    <div class="container">
-                        <div class="d-flex justify-content-center">
-                            <ul>
-                                <li><a href="#"><i class="bi bi-chevron-left"></i></a></li>
-                                <li><a href="#" class="active">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li class="m-auto mx-2">...</li>
-                                <li><a href="#">10</a></li>
-                                <li><a href="#"><i class="bi bi-chevron-right"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                {{-- END CHEF PAGINATION --}}
             </div>
+            {{-- END CHEF CARDS --}}
+
+            {{-- CHEF PAGINATION --}}
+                <div class="d-flex justify-content-center mt-5">
+                    {{ $chef_data->appends(request()->query())->links() }}
+                </div>
+            {{-- END CHEF PAGINATION --}}
         </div>
     </section>
 </x-mylayouts.layout-prototype>
