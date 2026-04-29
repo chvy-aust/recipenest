@@ -1,59 +1,55 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><img src="/public/images/logo.svg" width="400" alt="RECIPEnest Logo"></p>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://img.shields.io/badge/Laravel-FF2D20?style=flat&logo=laravel&logoColor=white" alt="Laravel"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white" alt="Bootstrap"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white" alt="MySQL"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://github.com/laravel/laravel"><img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge=laravel&logoColor=white" alt="Laravel"></a>
+<a href="https://github.com/twbs/bootstrap"><img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge=bootstrap&logoColor=white" alt="Bootstrap"></a>
+<a href="https://github.com/filamentphp/filament"><img src="https://img.shields.io/badge/filament-%23FDAE4B.svg?style=for-the-badge=filament&logoColor=black" alt="Filament"><a>
+<a href="https://github.com/livewire/livewire"><img src="https://img.shields.io/badge/livewire-%234e56a6.svg?style=for-the-badge=livewire&logoColor=white" alt="Livewire"></a>
 </p>
 
 ## RECIPEnest
 
-The RECIPEnest web application is a dedicated portal for recipe sharing. Not only does it intend to connect chefs worldwide, but it prioritize the overall user experience above all else. Developed using the Laravel and Bootsrap framework, RECIPEnest offers to following features:
+The RECIPEnest web application is a dedicated portal for recipe sharing. Not only does it intend to connect chefs worldwide, but it prioritize the overall user experience above all else. Developed with the Laravel and Bootsrap framework, RECIPEnest offers the following core features:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Recipe** and **Chef Discovery** with **Tag Filtering**
+- Customizable **Chef Profile** and **Portfolio**
+- Dedicated **User Dashboard** with **Chef Analytics**
+- Centralized **Recipe Management**
+- **Recipe Commenting**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+... *and many, many more to come!*
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## Software Requirements
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Laravel Herd | Version 1.24.0 [(download here)](https://herd.laravel.com/windows)
+- PhpMyAdmin (Optional)	| Version 5.2.3 [(download here)](https://www.phpmyadmin.net/downloads/)
+- Git | Version 2.52.0 [(download here)](https://git-scm.com/install/windows)
+- Composer | Version 2.9.1 [(download here)](https://getcomposer.org/download/)
+- Node.js | Version 25.5.0 [(download here)](https://nodejs.org/en/download) 
 
-## Laravel Sponsors
+*NOTE: PhpMyAdmin is only needed to interact with the physical database.*
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Local Development
+### Setup
+Once the source code has been extracted to your desired directory, open a terminal in the project's root and execute the following:
 
-### Premium Partners
+```bash
+composer setup
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+This command may take a moment to complete as it installs project dependences, compiles assets, generates environments and keys, as well as run migrations. 
 
-## Contributing
+### Seeding 
+To seed the database for testing, execute the following *after* running the setup command:
+```bash
+php artisan db:seed 
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Starting the Application
+Ensure that laravel Herd's services has been activated on your client. Then, run:
+```bash
+php artisan serve
+```
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
