@@ -1,4 +1,4 @@
-<p align="center"><img src="/public/images/logo.svg" width="400" alt="RECIPEnest Logo"></p>
+<p align="center"><img src="\storage\app\public\images\logo.svg" width="400" alt="RECIPEnest Logo"></p>
 
 <p align="center">
 <a href="https://github.com/laravel/laravel"><img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge=laravel&logoColor=white" alt="Laravel"></a>
