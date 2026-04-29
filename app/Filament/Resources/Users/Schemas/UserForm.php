@@ -6,6 +6,7 @@ use Filament\Schemas\Schema;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\DateTimePicker;
 
 class UserForm
@@ -16,35 +17,35 @@ class UserForm
             ->components([
                 TextInput::make('name')
                     ->required(),
-                // TextInput::make('email')
-                //     ->label('Email address')
-                //     ->email()
-                //     ->required(),
-                // DateTimePicker::make('email_verified_at'),
-                // TextInput::make('password')
-                //     ->password()
-                //     ->required(),
-                // TextInput::make('role')
-                //     ->required()
-                //     ->default('user'),
-                // TextInput::make('profile')
-                //     ->required()
-                //     ->default('images/profiles/default.jpg'),
+                FileUpload::make('header_name')
+                    ->image()
+                    ->disk('headers')
+                    ->label('Profile Header')
+                    ->required(),
                 FileUpload::make('image_name')
                     ->image()
                     ->disk('profiles')
+                    ->label('Profile Picture')
                     ->required(),
                 TextInput::make('short_description')
                     ->required()
-                    ->default('New Author'),
+                    ->default('Hello, nice to meet you!'),
                 Textarea::make('full_description')
+                    ->extraAttributes(['style' => 'resize: none;'])
                     ->columnSpanFull(),
-                TextInput::make('social_media_1')
-                    ->default('https://www.facebook.com/'),
-                TextInput::make('social_media_2')
-                    ->default('https://x.com/?lang=en'),
-                TextInput::make('social_media_3')
-                    ->default('https://www.instagram.com/'),
+                Select::make('badges')
+                    ->relationship('badges', 'name')
+                    ->multiple()
+                    ->preload()
+                    ->searchable()
+                    ->minItems(0)
+                    ->maxItems(10)
+                    ->helperText('Select a maximum of 10 badges to display on your profile!'),
+                TextInput::make('twitter'),
+                TextInput::make('tiktok'),
+                TextInput::make('facebook'),
+                TextInput::make('instagram'),
+                TextInput::make('youtube'),
             ])
             ->columns(1);
     }

@@ -13,20 +13,19 @@ return new class() extends Migration {
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('category')->default('food');
             $table->string('title', 100);
             $table->string('short_description', 500)->default('Short Description');
             $table->text('full_description');
             $table->text('ingredients');
             $table->text('instructions');
-            // $table->string('image');
             $table->string('image_path', 100);
             $table->string('image_name', 100);
+            $table->integer('yield')->default(1);
             $table->integer('total_time')->default(1);
             $table->string('total_time_unit')->default('minutes')->comment('minutes,hours,days');
             $table->timestamp('publish_date')->useCurrent();
             $table->tinyInteger('featured')->default(0)->comment('1=featured,0=notfeatured');
-            $table->tinyInteger('published')->default('1');
+            $table->tinyInteger('published')->default(1)->comment('1=featured,0=notfeatured');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

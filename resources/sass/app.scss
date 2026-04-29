@@ -1,8 +1,1186 @@
-// Fonts
+// RECIPE NEST COLOUR PALETTE
+$blue: #6A89B4;
+$indigo: #8f4ef7;
+$purple: #975ac2;
+$pink: #ae5b85;
+$red: #e75e6c;
+$orange: #e79e63;
+$yellow: #f0cd64;
+$green: #6b9c73;
+$teal: #87BBA2;
+$cyan: #3fc0da;
+$grey: #767676;
+
+$primary: #6b9c73;
+$secondary: #767676;
+
+// FONTS
+$font-family-base: Poppins, Century Gothic, Arial, san-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+$link-decoration:none;
+
+
+// DEFAULT COLOR SCHEME (LIGHT)
+$body-bg: #FBF7F2;
+$body-color: #000000;
+$body-secondary-bg: #ffffff;
+$body-secondary-color: #767676;
+
+
 @import url('https://fonts.bunny.net/css?family=Nunito');
-
-// Variables
 @import 'variables';
-
-// Bootstrap
 @import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import 'aos/dist/aos.css';
+@import 'swiper/swiper-bundle.css';
+
+/* Fonts */
+:root {
+  --default-font: "EB Garamond",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: Poppins, Century Gothic, Arial, san-serif;
+  --nav-font: "Inter",  sans-serif;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root {
+  --background-color: #FBF7F2; /* Background color for the entire website, including individual sections */
+  --default-color: #000000; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #000000; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #000000; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  --nav-color: #000000;  /* The default color of the main navmenu links */
+  --nav-hover-color: #000000; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #6a6a6a; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #465367; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.light-background {
+  --background-color:  #FBF7F2;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #060606;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #252525;
+  --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  color: var(--bs-body-color);
+  border: #000000 solid 3px;
+  background-color: var(--bs-primary);
+  padding: 10px 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+.header .logo:hover { text-decoration: none; }
+
+
+.header .logo h1 {
+  font-size: 40px;
+  margin: 0px;
+  font-weight: 900;
+  font-display: swap;
+  color: white;
+}
+
+@media (max-width: 1200px) {
+  .header .logo {
+    order: 1;
+  }
+
+  .header .navmenu {
+    order: 2;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Navmenu - Desktop */
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+
+  .navmenu ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .navmenu a {
+    color: var(--bs-body-color);
+    padding: 18px 15px;
+    font-family: var(--bs-font-family-base);
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .navmenu li:last-child a {
+    padding-right: 0;
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    text-decoration: underline;
+  }
+
+}
+
+/* Navmenu - Mobile */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: var(--nav-color);
+    font-size: 40px;
+    line-height: 0;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .navmenu {
+    padding: 0;
+    z-index: 9997;
+  }
+
+  .navmenu ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    inset: 60px 20px 20px 20px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    background-color: var(--bs-white);
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 9998;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--bs-grey);
+    padding: 10px 20px;
+    font-family: var(--bs-font-family-base);
+    font-size: 17px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    text-decoration: underline;
+  }
+
+  .mobile-nav-active { overflow: hidden; }
+
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #fff;
+    position: absolute;
+    font-size: 32px;
+    top: 15px;
+    right: 15px;
+    margin-right: 0;
+    z-index: 9999;
+  }
+
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    background: rgba(33, 37, 41, 0.8);
+    transition: 0.3s;
+  }
+
+  .mobile-nav-active .navmenu>ul { display: block; }
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+
+.breadcrumb { margin-bottom: 10px;}
+.breadcrumb .breadcrumb-item a { color: var(--bs-secondary) }
+.breadcrumb .breadcrumb-item a:hover { text-decoration: underline; }
+
+/*--------------------------------------------------------------
+# Global Footer
+--------------------------------------------------------------*/
+.footer {
+  color: var(--default-color);
+  background-color: var(--bs-primary);
+  border: black solid 3px;
+  font-size: 14px;
+  position: relative;
+}
+
+.footer .footer-top {
+  padding-top: 50px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .footer-about .logo {
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-about .logo span {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer .footer-about p {
+  font-size: 14px;
+  font-family: var(--heading-font);
+}
+
+.footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.footer h4 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-links ul i {
+  padding-right: 2px;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-links ul a {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+  color: var(--accent-color);
+}
+
+.footer .footer-contact p {
+  margin-bottom: 5px;
+}
+
+.footer .copyright {
+  padding: 25px 0;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+.footer .credits {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.footer .credits a {
+  color: var(--default-color);
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: var(--background-color);
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #ffffff;
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  // animation: animate-preloader 1.5s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background-color: #6B9C73;
+  border: black solid 3px;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: black;
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 10px 0;
+  scroll-margin-top: 90px;
+  overflow: clip;
+}
+
+@media (max-width: 1199px) {
+
+  section,
+  .section {
+    scroll-margin-top: 66px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+    margin:10px 0px 15px 0px;
+    position: relative;
+}
+
+.section-title .section-title-container {
+    display:flex;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--default-color);
+}
+
+.section-title h2 {
+    font-size: 40px;
+    font-weight: 0;
+}
+
+.section-title p {
+    margin-bottom: 0;
+}
+
+.section-title p a {
+  color: var(--default-color);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  border-bottom: none;
+  font-family: var(--nav-font);
+  font-weight: 500;
+  padding-bottom: 2px;
+}
+
+/*--------------------------------------------------------------
+# Slider Section
+--------------------------------------------------------------*/
+.slider {
+  background-color: transparent;
+}
+
+.slider .swiper-pagination .swiper-pagination-bullet {
+  background-color: color-mix(in srgb, var(--default-color) 90%, white 15%);
+}
+
+.slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+.slider .swiper-wrapper {
+  height: auto !important;
+}
+
+.slider .swiper-slide {
+  min-height: 500px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slider .swiper-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: color-mix(in srgb, var(--background-color), transparent 50%);
+}
+
+@media (max-width: 575px) {
+  .slider .swiper-slide {
+    min-height: 300px;
+  }
+}
+
+.slider .swiper-button-prev:after,
+.slider .swiper-button-next:after {
+  font-size: 24px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+.slider .content {
+  padding: 60px 80px;
+  max-width: 700px;
+  position: relative;
+}
+
+.slider .content a,
+.slider .content h2,
+.slider .content p {
+  color: var(--default-color);
+}
+
+/*--------------------------------------------------------------
+# Register / Login Section
+--------------------------------------------------------------*/
+
+.register button, .login button {
+    background-color: var(--bs-primary);
+    border: 2px solid black;
+    border-radius: 4px;
+    transition: 0.3s;
+    padding: 5px 8px;
+}
+
+.register button:hover, .login button:hover {
+    background-color: black;
+    color:white;
+}
+
+.register button:active, .login button:active {
+    padding-left:5px;
+}
+
+/*--------------------------------------------------------------
+# Recipe Card Section
+--------------------------------------------------------------*/
+
+.recipe-card {
+  background-color: var(--surface-color);
+  /* box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1); */
+  transition: 0.3s;
+  border: black solid 2px;
+  border-radius: 5px;
+  padding: 15px 30px;
+}
+
+.recipe-card:hover {
+    transform: translateY(-10px);
+    box-shadow: #000000 3px 3px 0px;
+}
+
+.recipe-profile-picture {
+    height: 44px;
+    width: 44px;
+    object-fit: cover;
+    object-position: center 10%;
+
+}
+
+.post-img img {
+  transition: 0.5s;
+  height:300px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom:15px;
+  border: black solid 2px;
+}
+
+.post-date {
+  font: 15px Poppins, Century Gothic, Arial, san-serif;
+  color: #767676;
+  font-weight: lighter;
+}
+
+
+.post-title {
+  font-size: 20px;
+  color: var(--heading-color);
+  font-weight: 700;
+  transition: 0.3s;
+  padding-bottom: 15px;
+  border-bottom: solid 1px color-mix(in srgb, var(--default-color), transparent 60%);
+  margin-bottom: 15px;
+}
+
+.description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.meta i {
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.meta span {
+  font-size: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.tags span {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.separator {
+  display: block;
+  width: 100%;
+  padding-top: 15px;
+  border-top: solid 1px color-mix(in srgb, var(--default-color), transparent 60%);
+  margin-top: 15px;
+}
+
+.separator-vertical {
+  display:inline-block;
+  margin: 0px 8px;
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
+}
+
+.readmore {
+  display: flex;
+  height: 30px;
+  font: bold 20px Poppins, Century Gothic, Arial, san-serif;
+  font-weight: 600;
+  border-bottom: solid 3px color-mix(black, transparent 100%);
+  cursor: pointer;
+  line-height: 0.7;
+  transition: 0.3s;
+  color: color-mix(in srgb, var(--heading-color), transparent 50%);
+  text-decoration:none !important;
+  border-bottom: none !important;
+}
+
+.readmore i {
+  line-height: 0;
+  margin-left: 6px;
+  font-size: 16px;
+}
+
+.readmore:hover {
+  border-bottom-color: color-mix(black, transparent 0%);
+  color: color-mix(in srgb, var(--heading-color), transparent 0%);
+}
+
+.chef-link {
+    font: bold 17px Poppins, Century Gothic, Arial, san-serif;
+    color:black;
+}
+
+.chef-icon {
+    font: bold 19px Poppins, Century Gothic, Arial, san-serif;
+    color: black;
+}
+
+.chef-link:hover {
+    text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
+# Recipe Details Section
+--------------------------------------------------------------*/
+.recipe-details {
+  padding-bottom: 30px;
+}
+
+.recipe-details {
+  background-color: var(--surface-color);
+  padding: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: black solid 2px;
+}
+
+.recipe-details .post-img {
+  overflow: hidden;
+  transition: 0.5s;
+  max-height:450px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom:15px;
+  border: black solid 2px;
+}
+
+.recipe-details .title {
+  color: var(--heading-color);
+  font: 25px Poppins, Century Gothic, Arial, san-serif;;
+  font-weight: 700;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.recipe-details .post-author-details,
+.recipe-details .post-author-details a {
+  font: 15px Poppins, Century Gothic, Arial, san-serif;
+  color: #767676;
+  font-weight: lighter;
+  margin-bottom: 0;
+}
+
+.recipe-details .post-author-details a:hover {
+  text-decoration: underline;
+  color:black;
+}
+
+.nowrap-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: help;
+}
+
+.recommended-recipes-header{
+  font-family: var(--bs-font-family-base);
+  font-size:18px;
+  color: #767676;
+  font-weight: 600;
+  padding: 0 0 0 10px;
+  margin: 0 0 20px 0;
+  border-left: #767676 solid 4px;
+}
+
+/*--------------------------------------------------------------
+# Recipe Comments Section
+--------------------------------------------------------------*/
+
+.recipe-comments img {
+  width: 60px;
+  height:60px;
+  border: 2px solid black;
+  margin-right: 15px;
+}
+
+.recipe-comments .comment {
+  margin-top: 30px;
+  position: relative;
+}
+
+
+.recipe-comments .comment h5 a {
+font-size: 16px;
+  font-weight: bold;
+  color: var(--default-color);
+  transition: 0.3s;
+}
+
+.recipe-comments .comment h5 a:hover {
+  text-decoration: underline;
+}
+
+
+/*--------------------------------------------------------------
+# Recommended Recipes
+--------------------------------------------------------------*/
+
+.recommended-recipe img {
+    border: 2px solid black;
+    object-fit: cover;
+    height:200px;
+    width:100%;
+}
+
+
+/*--------------------------------------------------------------
+# Comment Form Section
+--------------------------------------------------------------*/
+.comment-form {
+  padding-top: 10px;
+}
+
+.comment-form form {
+  background-color: white;
+  margin-top: 30px;
+  padding: 30px;
+  border: 2px solid black;
+}
+
+.comment-form form h4 {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.comment-form form p {
+  font-size: 14px;
+}
+
+.comment-form form textarea {
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  border-radius: 4px;
+  padding: 10px 10px;
+  font-size: 14px;
+  height: 120px;
+}
+
+.comment-form form textarea:focus {
+  color: var(--default-color);
+  box-shadow: none;
+  border-color: var(--accent-color);
+  background-color: var(--surface-color);
+}
+
+.comment-form form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+.comment-form form .form-group {
+  margin-bottom: 25px;
+}
+
+.comment-form form button {
+  border-radius: 4px;
+  padding: 10px 20px;
+  border: 2px solid black;
+  background-color: var(--bs-primary);
+  transition:0.3s;
+}
+
+.comment-form form button:hover {
+  color: white;
+  background-color: black;
+}
+
+/*--------------------------------------------------------------
+# RECIPENEST-SPECIFIC STYLING
+--------------------------------------------------------------*/
+
+.badge-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 468px) {
+    .badge-bar {
+        justify-content: center;
+    }
+}
+
+.sitename {
+    -webkit-text-stroke: 2px #000000;
+    text-shadow: #000000 3px 3px 0px;
+    color: white;
+}
+
+.section-title h2 {
+  color:#6B9C73;
+  -webkit-text-stroke: 2px #000000;
+  text-shadow: #000000 3px 3px 0px;
+  font-weight: 900;
+  font-size: 40px;
+
+}
+
+.search-bar {
+    border: black solid 3px;
+    border-radius: 5px;
+    height: 32px;
+    width: 100%;
+    padding-left: 5px;
+    background-color: white;
+}
+
+
+.search-btn {
+    font-family: var(--bs-font-family-base);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background: none;
+    border: none;
+    height: 32px;
+    width: fit-content;
+    cursor: pointer;
+}
+
+
+.badge {
+    border-radius: 5px;
+    border: #000 solid 2px;
+    color: black;
+    padding: 5px 8px 5px 8px !important;
+
+}
+
+.more-btn {
+    border: none;
+    background: none;
+    color: black;
+    font-weight: bold;
+    min-width: 35px;
+}
+
+
+.badge.red { background-color: var(--bs-red); }
+.badge.blue { background-color: var(--bs-blue); }
+.badge.green { background-color: var(--bs-green); }
+.badge.yellow { background-color: var(--bs-yellow);}
+.badge.purple { background-color: var(--bs-purple);}
+.badge.orange { background-color: var(--bs-orange);}
+
+.filter {
+    font-family: var(--bs-font-family-base);
+    font-size: 18px;
+    font-weight: 600;
+    background-color: var(--bs-primary);
+    border: 3px solid var(--bs-black);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.account-icon i {
+    font-size: 40px;
+    color: black;
+    cursor: pointer;
+}
+
+.top-bar {
+    background-color: rgb(216, 230, 220);
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    padding: 10px;
+    justify-content: center;
+}
+
+
+/*--------------------------------------------------------------
+# RECIPENEST-SPECIFIC STYLING - USER PROFILE SECTION
+--------------------------------------------------------------*/
+
+.profile-header {
+    width: 100%;
+    height:225px;
+    object-fit: cover;
+    object-position: center 10%;
+    border: black solid 2px;
+}
+
+.profile-picture {
+    border: black solid 2px;
+    height: 175px;
+    width: 175px;
+    object-fit: cover;
+    object-position: center 10%;
+    border-radius: 5px;
+    position: absolute;
+    bottom:-90px;
+    left:35px;
+    z-index:4;
+}
+
+.profile-picture-bg {
+    height: 200px;
+    width: 205px;
+    background-color: white;
+    border: black solid 2px;
+    position: absolute;
+    z-index:2;
+    bottom:-100px;
+    left:20px;
+}
+
+.profile-picture-under {
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    z-index:3;
+    bottom:-100px;
+    border-left: black solid 2px;
+    border-right: black solid 2px;
+}
+
+.profile-container {
+    margin-top: 100px;
+    padding:5px 20px 20px 20px;
+    border: black solid 2px;
+    border-top: none;
+    background-color: white;
+}
+
+.profile-container h1, h2, h3 {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+    font-weight: 600;
+    margin-bottom: 0px;
+
+}
+
+.profile-container h4, h5, h6 {
+    color: #676666;
+    font-family: Poppins, Century Gothic, Arial, san-serif;
+    font-weight: lighter;
+}
+
+.share-btn {
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 20px;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+    background: white;
+
+}
+
+.badge-bar .badge {
+    font: 12px Poppins, Century Gothic, Arial, san-serif;
+    border: black solid 2px;
+}
+
+.badge-bar .more-btn {
+    font: 18px Poppins, Century Gothic, Arial, san-serif;
+    font-weight: 600;
+}
+
+.profile-picture-card {
+    background-color: #6B9C73;
+    border: black solid 2px;
+}
+
+.profile-name {
+    padding: 8px 0px;
+    width: 100%;
+    margin: 10px 0px 0px 0px;
+    background-color: #6B9C73;
+    border: black solid 3px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-name i {
+    font-size: 25px;
+    color: black;
+    margin-left: 10px;
+}
+
+.profile-quote {
+    font: 15px Poppins, Century Gothic, Arial, san-serif;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    color: #767676;
+    white-space: nowrap;
+    margin-bottom: 15px;
+}
+
+.profile-bio {
+    font-family: var(--bs-font-family-base);
+    border: #a6a6a6 solid 1px;
+    padding: 5px 15px;
+    background-color: #f1f1f1;
+    text-align: justify;
+    margin-bottom: 0px;
+    height: 150px;
+    overflow: scroll;
+}
+
+.profile-join {
+    font: 15px Poppins, Century Gothic, Arial, san-serif;
+    color: #767676;
+    font-weight: lighter;
+}
+
+.chef-profile .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  color: black;
+  transition: 0.2s;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  background: white;
+}
+
+/*--------------------------------------------------------------
+# RECIPENEST-SPECIFIC STYLING - PORTFOLIO SECTION
+--------------------------------------------------------------*/
+
+.portfolio-header {
+    text-align: center;
+    font: 16px Poppins, Century Gothic, Arial, san-serif;
+    background-color:  #6B9C73;
+    border: black solid 2px;
+    font-weight: 300;
+    padding: 5px 0px;
+    display: block;
+}
+
+.portfolio-footer {
+    display: block;
+    text-align: center;
+    font: 15px Poppins, Century Gothic, Arial, san-serif;
+    font-style: italic;
+    padding: 8px 0px;
+}
+
+.portfolio {
+    margin-top: 15px;
+    overflow-y:auto;
+    max-height:650px;
+}
+
+.portfolio-item+.portfolio-item {
+    margin-top: 20px;
+}
+
+.portfolio-placeholder {
+    text-align: center;
+    color:#676666;
+    font-style: italic;
+}
+
+.filter-overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    width: 280px;
+}
+
+/* Optional: dark mode / your theme */
+.filter-overlay input {
+    width: 100%;
+}

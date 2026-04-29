@@ -20,25 +20,16 @@ class RecipeForm
     {
         return $schema
             ->components([
-                // Select::make('user_id')
-                //     ->relationship('user', 'name')
-                //     ->required()
-                //     ->default(fn() => auth()->id())
-                //     ->hidden(),
-
-                // TextInput::make('user_name')
-                //     ->label('Author')
-                //     ->formatStateUsing(fn($state) => auth()->user()->name),
-
-
-                TextInput::make('category')
-                    ->required()
-                    ->default('food'),
+                Select::make('tags')
+                    ->multiple()
+                    ->relationship('tags', 'name')
+                    ->searchable()
+                    ->preload(),
                 TextInput::make('title')
-                    ->required(),
-                TextInput::make('short_description')
                     ->required()
-                    ->default('Short Description'),
+                    ->maxLength(100),
+                TextInput::make('short_description')
+                    ->maxLength(500),
                 RichEditor::make('full_description')
                     ->required()
                     ->columnSpanFull(),
@@ -56,16 +47,24 @@ class RecipeForm
                     ->required()
                     ->numeric()
                     ->default(1),
-                TextInput::make('total_time_unit')
+                Select::make('total_time_unit')
                     ->required()
-                    ->default('minutes'),
+                    ->options([
+                        'minutes' => 'Minutes',
+                        'hours' => 'Hours',
+                        'days' => 'Days',
+                    ]),
+                TextInput::make('yield')
+                    ->required()
+                    ->numeric()
+                    ->default(1),
                 DateTimePicker::make('publish_date')
                     ->default(today())
                     ->required(),
                 Toggle::make('featured')
                     ->default(0)
                     ->label('Featured Recipe'),
-                Toggle::make('public')
+                Toggle::make('published')
                     ->default(1)
                     ->label('Published'),
             ])

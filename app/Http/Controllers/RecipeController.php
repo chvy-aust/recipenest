@@ -3,9 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Recipe;
-use Illuminate\Http\Request;
 
 class RecipeController extends Controller
 {
-    //
+    public function index()
+    {
+        $recipes = Recipe::list()-> paginate(8);
+        return view('pages.custom.users.recipe-list.index', compact('recipes'));
+    }
+
+    public function show(string $id){
+        // Eagerly load users + tags + comments associated with recipe
+        $recipe = Recipe::with(['user', 'tags'])->list()->recipe($id)->first();
+        // Return paginated comments
+        $comments = $recipe->comments()->with('user')->paginate(5);
+        // Return recipes from the same author that is not the current recipe
+        $recommendedRecipes = Recipe::where('user_id', $recipe->user_id)
+                        ->where("id", "!=", $recipe->id)
+                        ->limit(4)
+                        ->get();
+        return view('pages.custom.users.recipe-single.show', compact('recipe', 'comments', 'recommendedRecipes'));
+    }
 }

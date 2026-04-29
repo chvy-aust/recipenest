@@ -57,6 +57,12 @@ class RecipeResource extends Resource
             ->where('user_id', auth()->id());
     }
 
+    // Label shown in sidebar
+    public static function getNavigationLabel(): string
+    {
+        return 'Manage Recipes';
+    }
+
     /**
      * Change order of links on sidebar
      *

@@ -14,11 +14,15 @@ return new class() extends Migration {
             $table->string('role', 20)->default('user')->comment('user,chef');
             $table->string('image_path', 100)->default('/images/profiles/');
             $table->string('image_name', 100)->default('default.jpg');
+            $table->string('header_path', 100)->default('/images/headers/');
+            $table->string('header_name', 100)->default('default.jpg');
             $table->string('short_description', 200)->default('New Author');
             $table->text('full_description')->nullable();
-            $table->string('social_media_1', 300)->default('https://www.facebook.com/');
-            $table->string('social_media_2', 300)->default('https://x.com/?lang=en');
-            $table->string('social_media_3', 300)->default('https://www.instagram.com/');
+            $table->string('twitter', 300)->nullable();
+            $table->string('tiktok', 300)->nullable();
+            $table->string('facebook', 300)->nullable();
+            $table->string('instagram', 300)->nullable();
+            $table->string('youtube', 300)->nullable();
         });
     }
 

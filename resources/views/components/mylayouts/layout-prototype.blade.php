@@ -1,82 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <title>Bootstrap Example</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>RecipeNest</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    @vite(['resources/js/app.js', 'resources/sass/app.scss'])
 </head>
 
-<body>
+<body class="index-page">
 
-    {{-- Navbar starts testing --}}
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">RecipeNest</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
+        <header id="header" class="header d-flex align-items-center sticky-top">
 
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('chefs.index') }}">Chefs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('recipes.index') }}">Recipes</a>
-                </li>
-                <li class="nav-item">
-                    {{-- <a class="nav-link" href="{{ route('authors.recipes.index') }}">Dashboard</a> --}}
-                </li>
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+            <a href="{{ route('recipes.index') }}" class="logo"><h1 class="sitename">RECIPEnest<i>!</i></h1></a>
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="{{ route('recipes.index') }}">Recipes</a></li>
+                <li><a href="{{ route('chefs.index') }}">Chefs</a></li>
 
                 @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">Register</a>
-                </li>
+                <li><a href="{{ route('filament.author.auth.login') }}">Login</a></li>
+                {{-- temporary static register reference - to be resolved --}}
+                <li><a class="register-btn" href="/dashboard/register" >Sign Up</a></li>
                 @endguest
 
-
                 @auth
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">Logout</a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
+                <li><a href="{{ route('filament.author.pages.dashboard') }}">Dashboard</a></li>
+                <li>
+                    <a href="{{ route('filament.author.auth.logout') }}"onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">Logout</a>
+                    <form id="logout-form" action="{{ route('filament.author.auth.logout') }}" method="POST" class="d-none">@csrf</form>
                 </li>
                 @endauth
-
-
-
-
             </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+        </nav>
         </div>
-    </nav>
-    <br>
-    {{-- Navbar ends --}}
+    </header>
 
-    {{-- Content starts --}}
-    <div class="container">
-        {{ $slot }}
-    </div>
-    {{-- Content ends --}}
 
-    {{-- Footer starts --}}
+    <main class="main">
 
-    {{-- Footer ends --}}
+    {{ $slot }}
 
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div class="logo mb-0 d-flex align-items-center">
+                        <p class="mb-0"><b>RECIPEnest<i>!</i></b></p>
+                    </div>
+                    <div class="footer-contact pt-3">
+                        <p>Share your recipes, discover new flavors,</p>
+                        <p>and connect with food lovers worldwide.</p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href=""><i class="bi bi-twitter-x"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="{{ route('recipes.index') }}">Recipes</a></li>
+                        <li><a href="{{ route('chefs.index') }}">Chefs</a></li>
+                        <li><a href="{{ route('filament.author.pages.dashboard') }}">Dashboard</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12 footer-newsletter">
+                    <h4>Our Newsletter</h4>
+                    <p>Subscribe to get recipes and updates!</p>
+                    <form action="#" method="post" class="php-email-form">
+                        <div class="newsletter-form">
+                            <input type="email" name="email">
+                            <input type="submit" value="Subscribe">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <b>RecipeNest<i>!</i></b> </I><span>All Rights Reserved</span></p>
+        </div>
+    </footer>
+
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <div id="preloader"></div>
 
 </body>
 

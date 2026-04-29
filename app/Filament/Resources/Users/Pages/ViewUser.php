@@ -15,7 +15,7 @@ class ViewUser extends ViewRecord
     {
         return [
             Action::make('viewChef')
-                ->label('View Profile')
+                ->label('Preview Profile')
                 ->url(fn($record) => route('chefs.show', $record->id))
                 ->openUrlInNewTab()
                 ->button()
